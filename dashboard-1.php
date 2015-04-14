@@ -1,3 +1,15 @@
+<?php
+require_once ('config/main.php');
+$db=new database();
+$db->db_connect();
+$member_count=$db->member_count();
+$Top5_Member=$db->top5_member();
+$someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
+echo $Top5_Member.'</br>';
+echo $someJSON;
+//$someArray = json_decode($someJSON, true);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,12 +169,12 @@
 					
 					<!-- logo -->
 					<div class="logo">
-						<a href="dashboard-1.html" class="logo-expanded">
-							<img src="assets/images/logo@2x.png" width="80" alt="" />
+						<a href="dashboard-1.php" class="logo-expanded">
+							<img src="assets/images/logo-lg.png" width="100" alt="" />
 						</a>
 						
 						<a href="dashboard-1.html" class="logo-collapsed">
-							<img src="assets/images/logo-collapsed@2x.png" width="40" alt="" />
+							<img src="assets/images/logo-lg.png" width="40" alt="" />
 						</a>
 					</div>
 					
@@ -194,7 +206,7 @@
 					<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 					<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
 					<li class="active opened active">
-						<a href="dashboard-1.html">
+						<a href="dashboard-1.php">
 							<i class="linecons-cog"></i>
 							<span class="title">Dashboard</span>
 						</a>
@@ -1120,23 +1132,23 @@
 			<div class="row">
 				<div class="col-sm-3">
 					
-					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="99.9" data-suffix="%" data-duration="2">
+					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="" data-suffix="" data-duration="2">
 						<div class="xe-icon">
-							<i class="linecons-cloud"></i>
+							<i class="linecons-money"></i>
 						</div>
 						<div class="xe-label">
 							<strong class="num">0.0%</strong>
-							<span>Server uptime</span>
+							<span>Total Sales (IDR)</span>
 						</div>
 					</div>
-					
-					<div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="1" data-to="117" data-suffix="k" data-duration="3" data-easing="false">
+
+					<div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $member_count; ?>" data-suffix="" data-duration="1" data-easing="false">
 						<div class="xe-icon">
 							<i class="linecons-user"></i>
 						</div>
 						<div class="xe-label">
 							<strong class="num">1k</strong>
-							<span>Users Total</span>
+							<span>Total Member</span>
 						</div>
 					</div>
 					
@@ -1248,8 +1260,146 @@
 					
 				</div>
 			</div>
-			
-			
+
+            <!-- Gafik Tahunan range bulan dan sales -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Line Charts</h3>
+                            <div class="panel-options">
+                                <a href="#" data-toggle="panel">
+                                    <span class="collapse-icon">&ndash;</span>
+                                    <span class="expand-icon">+</span>
+                                </a>
+                                <a href="#" data-toggle="remove">
+                                    &times;
+                                </a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <script type="text/javascript">
+                                jQuery(document).ready(function($)
+                                {
+                                  /*  var dataSource = [
+                                        { month: 'Januari', europe: 546, americas: 332, africa: 227 },
+                                        { month: 'Februari', europe: 705, americas: 417, africa: 283 },
+                                        { month: 'Maret', europe: 856, americas: 513, africa: 361 },
+                                        { month: 'April', europe: 1294, americas: 614, africa: 471 },
+                                        { month: 'Mei', europe: 321, americas: 721, africa: 623 },
+                                        { month: 'Juni', europe: 730, americas: 1836, africa: 1297 },
+                                        { month: 'Juli', europe: 728, americas: 935, africa: 982 },
+                                        { month: 'Agustus', europe: 721, americas: 1027, africa: 1189 },
+                                        { month: 'September', europe: 704, americas: 1110, africa: 1416 },
+                                        { month: 'Oktober', europe: 680, americas: 1178, africa: 1665 },
+                                        { month: 'November', europe: 650, americas: 1231, africa: 1937 },
+                                        { month: 'Desember', europe: 650, americas: 1231, africa: 1937 }
+                                    ];*/
+                                    var dataSource = <?php echo $someJSON; ?>;
+
+                                    $("#bar-3").dxChart({
+                                        dataSource: dataSource,
+                                        commonSeriesSettings: {
+                                            argumentField: "month"
+                                        },
+                                        series: [
+                                            { valueField: "2012", name: "Tahun 2012", color: "#a4caf9" },
+                                            { valueField: "2013", name: "Tahun 2013", color: "#68acff" },
+                                            { valueField: "2014", name: "Tahun 2014", color: "#00fd83" }
+                                        ],
+                                        argumentAxis:{
+                                            grid:{
+                                                visible: true
+                                            }
+                                        },
+                                        tooltip:{
+                                            enabled: true
+                                        },
+                                        title: "Histoy Total Sales Perbulan",
+                                        legend: {
+                                            verticalAlignment: "bottom",
+                                            horizontalAlignment: "center"
+                                        },
+                                        commonPaneSettings: {
+                                            border:{
+                                                visible: true,
+                                                right: false
+                                            }
+                                        }
+                                    });
+                                });
+                            </script>
+                            <div id="bar-3" style="height: 400px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Stacked Bars with Selection (Rotated)</h3>
+                            <div class="panel-options">
+                                <a href="#" data-toggle="panel">
+                                    <span class="collapse-icon">&ndash;</span>
+                                    <span class="expand-icon">+</span>
+                                </a>
+                                <a href="#" data-toggle="remove">
+                                    &times;
+                                </a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <script type="text/javascript">
+                                jQuery(document).ready(function($)
+                                {
+                                   /* var dataSource = [
+                                        { country: "USA", gold: 36, silver: 38, bronze: 36 },
+                                        { country: "China", gold: 51, silver: 21, bronze: 28 },
+                                        { country: "Russia", gold: 23, silver: 21, bronze: 28 },
+                                        { country: "Britain", gold: 19, silver: 13, bronze: 15 },
+                                        { country: "Australia", gold: 14, silver: 15, bronze: 17 },
+                                        { country: "Germany", gold: 16, silver: 10, bronze: 15 }
+                                    ];*/
+                                      var dataSource = <?php echo $Top5_Member; ?>;
+                                    $("#bar-5").dxChart({
+                                        rotated: true,
+                                        pointSelectionMode: "multiple",
+                                        dataSource: dataSource,
+                                        commonSeriesSettings: {
+                                            argumentField: "country",
+                                            type: "stackedbar",
+                                            selectionStyle: {
+                                                hatching: {
+                                                    direction: "left"
+                                                }
+                                            }
+                                        },
+                                        series: [
+                                            { valueField: "total", name: "Total Transaksi", color: "#ffd700" }
+                                        ],
+                                        title: {
+                                            text: "TOP 5 Member"
+                                        },
+                                        legend: {
+                                            verticalAlignment: "bottom",
+                                            horizontalAlignment: "center"
+                                        },
+                                        pointClick: function(point) {
+                                            point.isSelected() ? point.clearSelection() : point.select();
+                                        }
+                                    });
+                                });
+                            </script>
+                            <div id="bar-5" style="height: 450px; width: 100%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 			
 			<!-- Main Footer -->
 			<!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
