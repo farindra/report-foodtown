@@ -5,8 +5,8 @@ $db->db_connect();
 $member_count=$db->member_count();
 $Top5_Member=$db->top5_member();
 $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
-echo $Top5_Member.'</br>';
-echo $someJSON;
+//echo $Top5_Member.'</br>';
+//echo $someJSON;
 //$someArray = json_decode($someJSON, true);
 
 ?>
@@ -173,7 +173,7 @@ echo $someJSON;
 							<img src="assets/images/logo-lg.png" width="100" alt="" />
 						</a>
 						
-						<a href="dashboard-1.html" class="logo-collapsed">
+						<a href="dashboard-1.php" class="logo-collapsed">
 							<img src="assets/images/logo-lg.png" width="40" alt="" />
 						</a>
 					</div>
@@ -307,14 +307,10 @@ echo $someJSON;
                         <a href="ui-widgets.html">
                             <i class="linecons-star"></i>
                             <span class="title">Purchase Order</span>
-                        </a>
-                    </li>
-                        </ul>
+                        </a></a>
                     </li>
                 </ul>
-
             </div>
-
         </div>
 
         <div class="main-content">
