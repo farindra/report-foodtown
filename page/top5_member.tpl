@@ -75,7 +75,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         <script type="text/javascript">
                             jQuery(document).ready(function($)
                             {
-                                var dataSources = <?php echo $Top5_Member; ?>;
+                                var dataSources = <?php echo $Top5_Member_Month; ?>;
                                 $("#bar-6").dxChart({
                                     rotated: true,
                                     pointSelectionMode: "multiple",

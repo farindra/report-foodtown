@@ -64,7 +64,7 @@
                         <script type="text/javascript">
                             jQuery(document).ready(function($)
                             {
-                                var dataSources = <?php echo $Top5_Tenant; ?>;
+                                var dataSources = <?php echo $Top5_Tenant_Month; ?>;
                                 $("#bar-8").dxChart({
                                     rotated: true,
                                     pointSelectionMode: "multiple",
