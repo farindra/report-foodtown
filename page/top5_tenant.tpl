@@ -10,6 +10,9 @@
                                     <span class="collapse-icon">&ndash;</span>
                                     <span class="expand-icon">+</span>
                                 </a>
+                                <a href="#" data-toggle="reload">
+                                    <i class="fa-rotate-right"></i>
+                                </a>
                                 <a href="#" data-toggle="remove">
                                     &times;
                                 </a>
@@ -19,11 +22,8 @@
                             <script type="text/javascript">
                                 jQuery(document).ready(function($)
                                 {
-                                   /* var dataSource = [
-                                        { country: "USA", gold: 36, silver: 38, bronze: 36 },
-                                        { country: "Germany", gold: 16, silver: 10, bronze: 15 }
-                                    ];*/
-                                      var dataSource = <?php echo $Top5_Tenant; ?>;
+
+                                     var dataSource = <?php echo $Top5_Tenant; ?>;
                                         $("#bar-7").dxChart({
                                             rotated: true,
                                             pointSelectionMode: "multiple",
@@ -47,6 +47,9 @@
                                             legend: {
                                                 verticalAlignment: "bottom",
                                                 horizontalAlignment: "center"
+                                            },
+                                            tooltip:{
+                                                enabled: true
                                             },
                                             pointClick: function(point) {
                                                 point.isSelected() ? point.clearSelection() : point.select();
