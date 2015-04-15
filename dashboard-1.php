@@ -1280,16 +1280,6 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                 {
                                   /*  var dataSource = [
                                         { month: 'Januari', europe: 546, americas: 332, africa: 227 },
-                                        { month: 'Februari', europe: 705, americas: 417, africa: 283 },
-                                        { month: 'Maret', europe: 856, americas: 513, africa: 361 },
-                                        { month: 'April', europe: 1294, americas: 614, africa: 471 },
-                                        { month: 'Mei', europe: 321, americas: 721, africa: 623 },
-                                        { month: 'Juni', europe: 730, americas: 1836, africa: 1297 },
-                                        { month: 'Juli', europe: 728, americas: 935, africa: 982 },
-                                        { month: 'Agustus', europe: 721, americas: 1027, africa: 1189 },
-                                        { month: 'September', europe: 704, americas: 1110, africa: 1416 },
-                                        { month: 'Oktober', europe: 680, americas: 1178, africa: 1665 },
-                                        { month: 'November', europe: 650, americas: 1231, africa: 1937 },
                                         { month: 'Desember', europe: 650, americas: 1231, africa: 1937 }
                                     ];*/
                                     var dataSource = <?php echo $someJSON; ?>;
@@ -1337,7 +1327,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Stacked Bars with Selection (Rotated)</h3>
+                            <h3 class="panel-title">TOP 5 Member All The Time</h3>
                             <div class="panel-options">
                                 <a href="#" data-toggle="panel">
                                     <span class="collapse-icon">&ndash;</span>
@@ -1354,10 +1344,6 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                 {
                                    /* var dataSource = [
                                         { country: "USA", gold: 36, silver: 38, bronze: 36 },
-                                        { country: "China", gold: 51, silver: 21, bronze: 28 },
-                                        { country: "Russia", gold: 23, silver: 21, bronze: 28 },
-                                        { country: "Britain", gold: 19, silver: 13, bronze: 15 },
-                                        { country: "Australia", gold: 14, silver: 15, bronze: 17 },
                                         { country: "Germany", gold: 16, silver: 10, bronze: 15 }
                                     ];*/
                                       var dataSource = <?php echo $Top5_Member; ?>;
@@ -1378,7 +1364,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                             { valueField: "total", name: "Total Transaksi", color: "#ffd700" }
                                         ],
                                         title: {
-                                            text: "TOP 5 Member"
+                                           // text: "TOP 5 Member"
                                         },
                                         legend: {
                                             verticalAlignment: "bottom",
@@ -1386,6 +1372,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                         },
                                         pointClick: function(point) {
                                             point.isSelected() ? point.clearSelection() : point.select();
+
                                         }
                                     });
                                 });

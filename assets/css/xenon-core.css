@@ -788,7 +788,7 @@ body {
 .sidebar-menu {
   display: table-cell;
   position: relative;
-  width: 340px;
+  width: 240px;
   background: #2c2e2f;
   z-index: 1;
 }
@@ -797,7 +797,8 @@ body {
   border-bottom: 1px solid #313437;
 }
 .sidebar-menu .logo-env .logo {
-  float: left;
+  /*float: left;*/
+    margin-left: 30px;
 }
 .sidebar-menu .logo-env .logo .logo-collapsed {
   display: none;
