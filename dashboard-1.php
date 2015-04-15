@@ -4,6 +4,7 @@ $db=new database();
 $db->db_connect();
 $member_count=$db->member_count();
 $Top5_Member=$db->top5_member();
+$Top5_Tenant=$db->top5_Tenant();
 $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
 //echo $Top5_Member.'</br>';
 //echo $someJSON;
@@ -43,119 +44,6 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 	
 </head>
 <body class="page-body">
-
-	<div class="settings-pane">
-			
-		<a href="#" data-toggle="settings-pane" data-animate="true">
-			&times;
-		</a>
-		
-		<div class="settings-pane-inner">
-			
-			<div class="row">
-
-                <!--<div class="col-md-4">
-
-                    <div class="user-info">
-
-                        <div class="user-image">
-                            <a href="extra-profile.html">
-                                <img src="assets/images/user-2.png" class="img-responsive img-circle" />
-                            </a>
-                        </div>
-
-                        <div class="user-details">
-
-                            <h3>
-                                <a href="extra-profile.html">John Smith</a>
-
-                                 Available statuses: is-online, is-idle, is-busy and is-offline
-								<span class="user-status is-online"></span>
-							</h3>
-							
-							<p class="user-title">Web Developer</p>
-							
-							<div class="user-links">
-								<a href="extra-profile.html" class="btn btn-primary">Edit Profile</a>
-								<a href="extra-profile.html" class="btn btn-success">Upgrade</a>
-							</div>
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="col-md-8 link-blocks-env">
-					
-					<div class="links-block left-sep">
-						<h4>
-							<span>Notifications</span>
-						</h4>
-						
-						<ul class="list-unstyled">
-							<li>
-								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk1" />
-								<label for="sp-chk1">Messages</label>
-							</li>
-							<li>
-								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk2" />
-								<label for="sp-chk2">Events</label>
-							</li>
-							<li>
-								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk3" />
-								<label for="sp-chk3">Updates</label>
-							</li>
-							<li>
-								<input type="checkbox" class="cbr cbr-primary" checked="checked" id="sp-chk4" />
-								<label for="sp-chk4">Server Uptime</label>
-							</li>
-						</ul>
-					</div>
-					
-					<div class="links-block left-sep">
-						<h4>
-							<a href="#">
-								<span>Help Desk</span>
-							</a>
-						</h4>
-						
-						<ul class="list-unstyled">
-							<li>
-								<a href="#">
-									<i class="fa-angle-right"></i>
-									Support Center
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa-angle-right"></i>
-									Submit a Ticket
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa-angle-right"></i>
-									Domains Protocol
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fa-angle-right"></i>
-									Terms of Service
-								</a>
-							</li>
-						</ul>
-					</div>
-					
-				</div>-->
-				
-			</div>
-		
-		</div>
-		
-	</div>
-	
 	<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 			
 		<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
@@ -1258,133 +1146,11 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			</div>
 
             <!-- Gafik Tahunan range bulan dan sales -->
-            <div class="row">
-                <div class="col-sm-12">
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Line Charts</h3>
-                            <div class="panel-options">
-                                <a href="#" data-toggle="panel">
-                                    <span class="collapse-icon">&ndash;</span>
-                                    <span class="expand-icon">+</span>
-                                </a>
-                                <a href="#" data-toggle="remove">
-                                    &times;
-                                </a>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <script type="text/javascript">
-                                jQuery(document).ready(function($)
-                                {
-                                  /*  var dataSource = [
-                                        { month: 'Januari', europe: 546, americas: 332, africa: 227 },
-                                        { month: 'Desember', europe: 650, americas: 1231, africa: 1937 }
-                                    ];*/
-                                    var dataSource = <?php echo $someJSON; ?>;
-
-                                    $("#bar-3").dxChart({
-                                        dataSource: dataSource,
-                                        commonSeriesSettings: {
-                                            argumentField: "month"
-                                        },
-                                        series: [
-                                            { valueField: "2012", name: "Tahun 2012", color: "#a4caf9" },
-                                            { valueField: "2013", name: "Tahun 2013", color: "#68acff" },
-                                            { valueField: "2014", name: "Tahun 2014", color: "#00fd83" }
-                                        ],
-                                        argumentAxis:{
-                                            grid:{
-                                                visible: true
-                                            }
-                                        },
-                                        tooltip:{
-                                            enabled: true
-                                        },
-                                        title: "Histoy Total Sales Perbulan",
-                                        legend: {
-                                            verticalAlignment: "bottom",
-                                            horizontalAlignment: "center"
-                                        },
-                                        commonPaneSettings: {
-                                            border:{
-                                                visible: true,
-                                                right: false
-                                            }
-                                        }
-                                    });
-                                });
-                            </script>
-                            <div id="bar-3" style="height: 400px; width: 100%;"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">TOP 5 Member All The Time</h3>
-                            <div class="panel-options">
-                                <a href="#" data-toggle="panel">
-                                    <span class="collapse-icon">&ndash;</span>
-                                    <span class="expand-icon">+</span>
-                                </a>
-                                <a href="#" data-toggle="remove">
-                                    &times;
-                                </a>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <script type="text/javascript">
-                                jQuery(document).ready(function($)
-                                {
-                                   /* var dataSource = [
-                                        { country: "USA", gold: 36, silver: 38, bronze: 36 },
-                                        { country: "Germany", gold: 16, silver: 10, bronze: 15 }
-                                    ];*/
-                                      var dataSource = <?php echo $Top5_Member; ?>;
-                                    $("#bar-5").dxChart({
-                                        rotated: true,
-                                        pointSelectionMode: "multiple",
-                                        dataSource: dataSource,
-                                        commonSeriesSettings: {
-                                            argumentField: "country",
-                                            type: "stackedbar",
-                                            selectionStyle: {
-                                                hatching: {
-                                                    direction: "left"
-                                                }
-                                            }
-                                        },
-                                        series: [
-                                            { valueField: "total", name: "Total Transaksi", color: "#ffd700" }
-                                        ],
-                                        title: {
-                                           // text: "TOP 5 Member"
-                                        },
-                                        legend: {
-                                            verticalAlignment: "bottom",
-                                            horizontalAlignment: "center"
-                                        },
-                                        pointClick: function(point) {
-                                            point.isSelected() ? point.clearSelection() : point.select();
-
-                                        }
-                                    });
-                                });
-                            </script>
-                            <div id="bar-5" style="height: 450px; width: 100%;"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-			
-			<!-- Main Footer -->
+            <?php include('page/transaksi_sales.tpl');?>
+			<?php include('page/top5_member.tpl');?>
+            <?php include('page/top5_tenant.tpl');?>
+   			<!-- Main Footer -->
 			<!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
 			<!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
 			<!-- Or class "fixed" to  always fix the footer to the end of page -->

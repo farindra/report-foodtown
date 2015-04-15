@@ -76,4 +76,11 @@ class database{
         return  ($row[0]);
     }
 
+    function top5_tenant() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Top5_Tenant'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
 }
