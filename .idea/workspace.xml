@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="37be418d-906c-443e-89cb-1f31e77dbf48" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-1.php" afterPath="$PROJECT_DIR$/dashboard-1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/main.php" afterPath="$PROJECT_DIR$/config/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/top5_member.tpl" afterPath="$PROJECT_DIR$/page/top5_member.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/top5_tenant.tpl" afterPath="$PROJECT_DIR$/page/top5_tenant.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/transaksi_sales.tpl" afterPath="$PROJECT_DIR$/page/transaksi_sales.tpl" />
     </list>
     <ignored path="report-foodtown.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,18 +30,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="92" selection-start="2551" selection-end="2551" vertical-scroll-proportion="1.063253" vertical-offset="1194" max-vertical-offset="1751">
+            <state line="204" column="28" selection-start="6909" selection-end="6909" vertical-scroll-proportion="-15.346154" vertical-offset="638" max-vertical-offset="1190">
               <folding>
-                <marker date="1429093895927" expanded="true" signature="1553:1590" placeholder="SELECT count..Tab_Member..." />
-                <marker date="1429093895927" expanded="true" signature="1770:1812" placeholder="SELECT Val_J..Tab_Val..." />
-                <marker date="1429093895927" expanded="true" signature="1770:1871" placeholder="SELECT Val_J..Tab_Val..." />
-                <marker date="1429093895927" expanded="true" signature="1770:1825" placeholder="SELECT Val_J..Tab_Val..." />
-                <marker date="1429093895927" expanded="true" signature="2011:2072" placeholder="SELECT Val_J..Tab_Val..." />
-                <marker date="1429093895927" expanded="true" signature="2251:2306" placeholder="SELECT Val_J..Tab_Val..." />
-                <marker date="1429093895927" expanded="true" signature="2491:2552" placeholder="SELECT Val_J..Tab_Val..." />
+                <element signature="n#db_connect#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#db_close#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#db_query#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#db_listdata#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#member_count#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_member#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_member_month#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_member_year#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_member_new#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_tenant#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_tenant_month#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_tenant_year#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#top5_tenant_new#0;n#database#0;n#!!top" expanded="false" />
+                <element signature="n#trans_years_all#0;n#database#0;n#!!top" expanded="false" />
+                <marker date="1429179974802" expanded="true" signature="1533:1570" placeholder="SELECT count..Tab_Member..." />
+                <marker date="1429179974802" expanded="true" signature="1769:1811" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="1769:1870" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="1769:1824" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="2010:2071" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="2804:2864" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="3580:3639" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="4369:4424" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="4610:4671" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="5388:5448" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="6164:6223" placeholder="SELECT Val_J..Tab_Val..." />
+                <marker date="1429179974802" expanded="true" signature="6946:7005" placeholder="SELECT Val_J..Tab_Val..." />
               </folding>
             </state>
           </provider>
@@ -48,9 +69,10 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="28" selection-start="147" selection-end="175" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="867">
+            <state line="60" column="0" selection-start="2007" selection-end="2007" vertical-scroll-proportion="-39.23077" vertical-offset="0" max-vertical-offset="1122">
               <folding>
-                <marker date="1428993885109" expanded="true" signature="235:259" placeholder="SELECT * FRO..Tab_Member..." />
+                <element signature="e#6#89#0" expanded="true" />
+                <marker date="1429158735256" expanded="true" signature="235:259" placeholder="SELECT * FRO..Tab_Member..." />
               </folding>
             </state>
           </provider>
@@ -59,7 +81,7 @@
       <file leaf-file-name="dashboard-1.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard-1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="44" selection-start="269" selection-end="269" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="22933">
+            <state line="9" column="16" selection-start="270" selection-end="286" vertical-scroll-proportion="-2.9423077" vertical-offset="0" max-vertical-offset="22950">
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -71,10 +93,31 @@
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1429093953989" expanded="true" signature="36794:37302" placeholder="..." />
-                <marker date="1429093953989" expanded="true" signature="36826:37302" placeholder="..." />
-                <marker date="1429093953989" expanded="true" signature="36864:37064" placeholder="..." />
-                <marker date="1429093953989" expanded="true" signature="37105:37302" placeholder="..." />
+                <marker date="1429179975032" expanded="true" signature="36835:37343" placeholder="..." />
+                <marker date="1429179975032" expanded="true" signature="36867:37343" placeholder="..." />
+                <marker date="1429179975032" expanded="true" signature="36905:37105" placeholder="..." />
+                <marker date="1429179975032" expanded="true" signature="37146:37343" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transaksi_sales.tpl" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/page/transaksi_sales.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="67" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.83152175" vertical-offset="408" max-vertical-offset="1326">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="top5_member.tpl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/top5_member.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="0" selection-start="5699" selection-end="5699" vertical-scroll-proportion="-64.07692" vertical-offset="0" max-vertical-offset="1972">
+              <folding>
+                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,39 +126,11 @@
       <file leaf-file-name="top5_tenant.tpl" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/top5_tenant.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="79" selection-start="3608" selection-end="3608" vertical-scroll-proportion="-1.9615384" vertical-offset="1020" max-vertical-offset="1836">
+            <state line="94" column="0" selection-start="4825" selection-end="4825" vertical-scroll-proportion="-8.153846" vertical-offset="451" max-vertical-offset="1003">
               <folding>
+                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="top5_member.tpl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/top5_member.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="79" selection-start="4026" selection-end="4026" vertical-scroll-proportion="-18.153847" vertical-offset="837" max-vertical-offset="2023">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tables-basic.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tables-basic.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1112" column="36" selection-start="29377" selection-end="29464" vertical-scroll-proportion="-4.6153846" vertical-offset="18664" max-vertical-offset="30311">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transaksi_sales.tpl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/transaksi_sales.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="23" selection-start="1096" selection-end="1096" vertical-scroll-proportion="-1.6538461" vertical-offset="467" max-vertical-offset="1309">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,16 +163,17 @@
         <option value="$PROJECT_DIR$/dashboard-1.html" />
         <option value="$PROJECT_DIR$/assets/css/xenon-core.css" />
         <option value="$PROJECT_DIR$/config/data.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/page/Top5/index.php" />
         <option value="$PROJECT_DIR$/page/Top5/top5_member.php" />
         <option value="$PROJECT_DIR$/page/Top5/transaksi_sales.html" />
         <option value="$PROJECT_DIR$/page/transaksi_sales.html" />
-        <option value="$PROJECT_DIR$/page/transaksi_sales.tpl" />
+        <option value="$PROJECT_DIR$/tables-basic.html" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/page/top5_member.tpl" />
+        <option value="$PROJECT_DIR$/page/top5_tenant.tpl" />
         <option value="$PROJECT_DIR$/config/main.php" />
         <option value="$PROJECT_DIR$/dashboard-1.php" />
-        <option value="$PROJECT_DIR$/page/top5_tenant.tpl" />
-        <option value="$PROJECT_DIR$/page/top5_member.tpl" />
+        <option value="$PROJECT_DIR$/page/transaksi_sales.tpl" />
       </list>
     </option>
   </component>
@@ -239,6 +255,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="SearchEverywhereHistory" value="/*" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -314,7 +331,7 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32781458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294702" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -359,13 +376,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="0" selection-start="1709" selection-end="1709" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1326">
           <folding>
-            <marker date="1429093895927" expanded="true" signature="1553:1590" placeholder="SELECT count..Tab_Member..." />
-            <marker date="1429093895927" expanded="true" signature="1770:1812" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="1770:1871" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="1770:1825" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="2011:2072" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="2251:2306" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="2491:2552" placeholder="SELECT Val_J..Tab_Val..." />
+            <element signature="n#db_connect#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#db_close#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#db_query#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#db_listdata#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#member_count#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member_month#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member_year#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member_new#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant_month#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant_year#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant_new#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#trans_years_all#0;n#database#0;n#!!top" expanded="false" />
+            <marker date="1429179974802" expanded="true" signature="1533:1570" placeholder="SELECT count..Tab_Member..." />
+            <marker date="1429179974802" expanded="true" signature="1769:1811" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="1769:1870" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="1769:1824" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="2010:2071" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="2804:2864" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="3580:3639" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="4369:4424" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="4610:4671" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="5388:5448" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="6164:6223" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="6946:7005" placeholder="SELECT Val_J..Tab_Val..." />
           </folding>
         </state>
       </provider>
@@ -374,7 +410,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="42" selection-start="1123" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="952">
           <folding>
-            <marker date="1428993885109" expanded="true" signature="235:259" placeholder="SELECT * FRO..Tab_Member..." />
+            <element signature="e#6#89#0" expanded="true" />
+            <marker date="1429158735256" expanded="true" signature="235:259" placeholder="SELECT * FRO..Tab_Member..." />
           </folding>
         </state>
       </provider>
@@ -393,10 +430,10 @@
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1429093953989" expanded="true" signature="36794:37302" placeholder="..." />
-            <marker date="1429093953989" expanded="true" signature="36826:37302" placeholder="..." />
-            <marker date="1429093953989" expanded="true" signature="36864:37064" placeholder="..." />
-            <marker date="1429093953989" expanded="true" signature="37105:37302" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="36835:37343" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="36867:37343" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="36905:37105" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="37146:37343" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -438,15 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="147" selection-end="175" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="867">
-          <folding>
-            <marker date="1428993885109" expanded="true" signature="235:259" placeholder="SELECT * FRO..Tab_Member..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/xenon-api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1632">
@@ -468,6 +496,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/layout-variants.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="27540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="2007" selection-end="2007" vertical-scroll-proportion="-39.23077" vertical-offset="0" max-vertical-offset="1122">
+          <folding>
+            <element signature="e#6#89#0" expanded="true" />
+            <marker date="1429158735256" expanded="true" signature="235:259" placeholder="SELECT * FRO..Tab_Member..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/top5_member.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="0" selection-start="5699" selection-end="5699" vertical-scroll-proportion="-64.07692" vertical-offset="0" max-vertical-offset="1972">
+          <folding>
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables-basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1405" column="16" selection-start="35592" selection-end="37801" vertical-scroll-proportion="0.0040650405" vertical-offset="23883" max-vertical-offset="30311">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/charts-main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1395" column="49" selection-start="38293" selection-end="38725" vertical-scroll-proportion="-1.9342105" vertical-offset="23568" max-vertical-offset="35088">
@@ -477,42 +539,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables-basic.html">
+    <entry file="file://$PROJECT_DIR$/page/top5_tenant.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1112" column="36" selection-start="29377" selection-end="29464" vertical-scroll-proportion="-4.6153846" vertical-offset="18664" max-vertical-offset="30311">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/top5_member.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="79" selection-start="4026" selection-end="4026" vertical-scroll-proportion="-18.153847" vertical-offset="837" max-vertical-offset="2023">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/transaksi_sales.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="23" selection-start="1096" selection-end="1096" vertical-scroll-proportion="-1.6538461" vertical-offset="467" max-vertical-offset="1309">
+        <state line="94" column="0" selection-start="4825" selection-end="4825" vertical-scroll-proportion="-8.153846" vertical-offset="451" max-vertical-offset="1003">
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/top5_tenant.tpl">
+    <entry file="file://$PROJECT_DIR$/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="79" selection-start="3608" selection-end="3608" vertical-scroll-proportion="-1.9615384" vertical-offset="1020" max-vertical-offset="1836">
+        <state line="204" column="28" selection-start="6909" selection-end="6909" vertical-scroll-proportion="-15.346154" vertical-offset="638" max-vertical-offset="1190">
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#db_connect#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#db_close#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#db_query#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#db_listdata#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#member_count#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member_month#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member_year#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_member_new#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant_month#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant_year#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#top5_tenant_new#0;n#database#0;n#!!top" expanded="false" />
+            <element signature="n#trans_years_all#0;n#database#0;n#!!top" expanded="false" />
+            <marker date="1429179974802" expanded="true" signature="1533:1570" placeholder="SELECT count..Tab_Member..." />
+            <marker date="1429179974802" expanded="true" signature="1769:1811" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="1769:1870" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="1769:1824" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="2010:2071" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="2804:2864" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="3580:3639" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="4369:4424" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="4610:4671" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="5388:5448" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="6164:6223" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429179974802" expanded="true" signature="6946:7005" placeholder="SELECT Val_J..Tab_Val..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard-1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="269" selection-end="269" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="22933">
+        <state line="9" column="16" selection-start="270" selection-end="286" vertical-scroll-proportion="-2.9423077" vertical-offset="0" max-vertical-offset="22950">
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -524,26 +598,18 @@
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1429093953989" expanded="true" signature="36794:37302" placeholder="..." />
-            <marker date="1429093953989" expanded="true" signature="36826:37302" placeholder="..." />
-            <marker date="1429093953989" expanded="true" signature="36864:37064" placeholder="..." />
-            <marker date="1429093953989" expanded="true" signature="37105:37302" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="36835:37343" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="36867:37343" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="36905:37105" placeholder="..." />
+            <marker date="1429179975032" expanded="true" signature="37146:37343" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/main.php">
+    <entry file="file://$PROJECT_DIR$/page/transaksi_sales.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="92" selection-start="2551" selection-end="2551" vertical-scroll-proportion="1.063253" vertical-offset="1194" max-vertical-offset="1751">
-          <folding>
-            <marker date="1429093895927" expanded="true" signature="1553:1590" placeholder="SELECT count..Tab_Member..." />
-            <marker date="1429093895927" expanded="true" signature="1770:1812" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="1770:1871" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="1770:1825" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="2011:2072" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="2251:2306" placeholder="SELECT Val_J..Tab_Val..." />
-            <marker date="1429093895927" expanded="true" signature="2491:2552" placeholder="SELECT Val_J..Tab_Val..." />
-          </folding>
+        <state line="51" column="67" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.83152175" vertical-offset="408" max-vertical-offset="1326">
+          <folding />
         </state>
       </provider>
     </entry>

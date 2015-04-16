@@ -49,3 +49,12 @@ $someObject = json_decode($someJSON);
 print_r($someObject);      // Dump all data of the Object
 echo '</br></br>'.'2'.$someObject[0]->name; // Access Object data */
 //echo '[{ "month": "Januari","europe": "546", "americas": "332", "africa": "227" },{ "month": "Februari", "europe": "705", "americas": 417", "africa": "283 },{ "month": "Maret", "europe": "856", "americas": "513", "africa": "361" },{ "month": "April", "europe": "1294", "americas": "614", "africa": "471" }]';
+
+/*
+$json_string ='[{"name":"Jonathan Suh","gender":"male"}]';
+$parsed_json = json_decode($json_string);
+print_r ($parsed_json);
+foreach ($parsed_json as $nm => $value) {
+    echo $value->name;
+
+}*/

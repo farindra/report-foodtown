@@ -60,44 +60,50 @@
                             </script>
                         <div id="bar-7" style="height: 450px; width: 100%;"></div>
                     </div>
-                    <div class="panel-body">
-                        <script type="text/javascript">
-                            jQuery(document).ready(function($)
-                            {
-                                var dataSources = <?php echo $Top5_Tenant_Month; ?>;
-                                $("#bar-8").dxChart({
-                                    rotated: true,
-                                    pointSelectionMode: "multiple",
-                                    dataSource: dataSources,
-                                commonSeriesSettings: {
-                                    argumentField: "country",
-                                    type: "stackedbar",
-                                    selectionStyle: {
-                                        hatching: {
-                                            direction: "left"
-                                        }
-                                    }
-                                },
-                                series: [
-                                    { valueField: "total", name: "Total Transaksi", color: "#52e667" }
-                                ],
-                                title: {
-                                    text: "TOP 5 Tenant of The Month"
-                                },
-                                legend: {
-                                    verticalAlignment: "bottom",
-                                    horizontalAlignment: "center"
-                                },
-                                pointClick: function(point) {
-                                    point.isSelected() ? point.clearSelection() : point.select();
+                        <div class="panel-body">
+                            <div class="col-md-4">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Top 5 Tenant Of The Month</h3>
 
-                                }
-                                });
-                            });
-                        </script>
-                        <div id="bar-8" style="height: 450px; width: 100%;"></div>
+
+                                    </div>
+
+                                    <table class="table table-condensed">
+                                        <?php echo $db->top5_tenant_month(); ?>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Top 5 Tenant Of The Year</h3>
+
+
+                                    </div>
+
+                                    <table class="table table-condensed">
+                                        <?php echo $db->top5_tenant_year(); ?>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">New Tenant</h3>
+
+
+                                    </div>
+
+                                    <table class="table table-condensed">
+                                        <?php echo $db->top5_tenant_new(); ?>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
-                </div>
+
             </div>

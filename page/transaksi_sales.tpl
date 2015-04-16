@@ -28,7 +28,7 @@
                          { month: 'Januari', europe: 546, americas: 332, africa: 227 },
                          { month: 'Desember', europe: 650, americas: 1231, africa: 1937 }
                          ];*/
-                        var dataSource = <?php echo $someJSON; ?>;
+                        var dataSource = <?php echo $Trans_Years_All; ?>;
 
                         $("#bar-3").dxChart({
                             dataSource: dataSource,
@@ -36,9 +36,10 @@
                                 argumentField: "month"
                             },
                             series: [
-                                { valueField: "2012", name: "Tahun 2012", color: "#a4caf9" },
+                                { valueField: "2012", name: "Tahun 2012", color: "#adadad" },
                                 { valueField: "2013", name: "Tahun 2013", color: "#68acff" },
-                                { valueField: "2014", name: "Tahun 2014", color: "#00fd83" }
+                                { valueField: "2014", name: "Tahun 2014", color: "#00fd83" },
+                                { valueField: "2015", name: "Tahun 2015", color: "#e700c4" }
                             ],
                             argumentAxis:{
                                 grid:{
@@ -48,7 +49,7 @@
                             tooltip:{
                                 enabled: true
                             },
-                            title: "Histoy Total Sales Perbulan",
+                            title: "Histoy Total Sales All The Year",
                             legend: {
                                 verticalAlignment: "bottom",
                                 horizontalAlignment: "center"

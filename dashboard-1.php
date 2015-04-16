@@ -7,6 +7,7 @@ $Top5_Member=$db->top5_member();
 $Top5_Member_Month=$db->top5_member_month();
 $Top5_Tenant=$db->top5_Tenant();
 $Top5_Tenant_Month=$db->top5_tenant_month();
+$Trans_Years_All=$db->trans_years_all();
 $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
 //echo $Top5_Member.'</br>';
 //echo $someJSON;
