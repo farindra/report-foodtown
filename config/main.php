@@ -209,5 +209,23 @@ class database{
         return  ($row[0]);
     }
 
+    function trans_hour($dyear,$dmonth,$ddate) {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Trans_Hour_All'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
 
+        $fillhead='<thead><tr><th width="1%">'.'#</th><th>Nama</th><th>GrandTotal</th></tr></thead><tbody>';
+        $fillbody='';
+        $nourut= 0;
+        $json_string =($row[0]);
+        $parsed_json = json_decode($json_string);
+        foreach ($parsed_json as $key => $value) {
+            $nourut+= 1;
+            $fillbody = $fillbody . '<tr><td>'. $nourut .'</td><td>' . $value->nama . '</td><td class="right-align">'. $value->grandtotal . '</td></tr>';
+
+        }
+        $fillbody = $fillbody . '<tbody>';
+
+        return  ($fillhead.$fillbody);
+    }
 }

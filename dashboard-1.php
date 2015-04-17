@@ -24,7 +24,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 	<meta name="description" content="Xenon Boostrap Admin Panel" />
 	<meta name="author" content="" />
 	
-	<title>Xenon - Dashboard</title>
+	<title>Lukison - Foodtown</title>
 
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
 	<link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
@@ -529,7 +529,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 				</ul>
 				
 			</nav>
-			
+
 			<script type="text/javascript">
 				jQuery(document).ready(function($)
 				{	
@@ -1151,6 +1151,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
             <!-- Gafik Tahunan range bulan dan sales -->
 
             <?php include('page/transaksi_sales.tpl');?>
+            <?php include('page/transaksi_sales_hour.tpl');?>
 			<?php include('page/top5_member.tpl');?>
             <?php include('page/top5_tenant.tpl');?>
    			<!-- Main Footer -->
@@ -1163,9 +1164,9 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 				
 					<!-- Add your copyright text here -->
 					<div class="footer-text">
-						&copy; 2014 
-						<strong>Xenon</strong> 
-						theme by <a href="http://laborator.co" target="_blank">Laborator</a>
+						&copy; 2015
+						<strong>Lukison Group</strong>
+						theme by <a href="http://foodtown.co.id" target="_blank">Foodtown</a>
 					</div>
 					
 					
@@ -1310,7 +1311,26 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			
 		</div>
 		<!-- end: Chat Section -->
-		
+    <div class="modal fade" id="modal-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Basic Modal</h4>
+                </div>
+
+                <div class="modal-body">
+                    Hello I am a Modal!
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 		
 	</div>
 	
@@ -1329,17 +1349,35 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 	<script src="assets/js/joinable.js"></script>
 	<script src="assets/js/xenon-api.js"></script>
 	<script src="assets/js/xenon-toggles.js"></script>
-
+    <script src="assets/js/moment.min.js"></script>
 
 	<!-- Imported scripts on this page -->
 	<script src="assets/js/xenon-widgets.js"></script>
 	<script src="assets/js/devexpress-web-14.1/js/globalize.min.js"></script>
 	<script src="assets/js/devexpress-web-14.1/js/dx.chartjs.js"></script>
 	<script src="assets/js/toastr/toastr.min.js"></script>
-
+    <script src="assets/js/daterangepicker/daterangepicker.js"></script>
+    <script src="assets/js/datepicker/bootstrap-datepicker.js"></script>
+    <script src="assets/js/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="assets/js/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/js/select2/select2.min.js"></script>
+    <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+    <script src="assets/js/tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/js/typeahead.bundle.js"></script>
+    <script src="assets/js/handlebars.min.js"></script>
+    <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="assets/js/xenon-custom.js"></script>
+
+
+    <!-- Imported styles on this page -->
+    <link rel="stylesheet" href="assets/js/daterangepicker/daterangepicker-bs3.css">
+    <link rel="stylesheet" href="assets/js/select2/select2.css">
+    <link rel="stylesheet" href="assets/js/select2/select2-bootstrap.css">
+    <link rel="stylesheet" href="assets/js/multiselect/css/multi-select.css">
+
 
 </body>
 </html>

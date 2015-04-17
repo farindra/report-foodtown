@@ -47,12 +47,19 @@
                                 }
                             },
                             tooltip:{
-                                enabled: true
+                                enabled: true,
+                                format: "numbers",
+
                             },
                             title: "Histoy Total Sales All The Year",
                             legend: {
                                 verticalAlignment: "bottom",
                                 horizontalAlignment: "center"
+                            },
+                            valueAxis:{
+                                label: {
+                                    format: "numbers"
+                                }
                             },
                             commonPaneSettings: {
                                 border:{
