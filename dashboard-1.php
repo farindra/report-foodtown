@@ -6,15 +6,10 @@ $db->db_connect();
 $daily_sales=$db->daily_sales();
 $daily_trans=$db->daily_trans();
 $daily_member=$db->daily_member();
-$Top5_Member=$db->top5_member();
-$Top5_Member_Month=$db->top5_member_month();
-$Top5_Tenant=$db->top5_Tenant();
-$Top5_Tenant_Month=$db->top5_tenant_month();
+$daily_trans_hour=$db->daily_trans_hour();
 $Trans_Years_All=$db->trans_years_all();
 $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
-//echo $Top5_Member.'</br>';
-//echo $someJSON;
-//$someArray = json_decode($someJSON, true);
+
 
 ?>
 <!DOCTYPE html>
@@ -133,11 +128,11 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         </ul>-->
                     </li>
                     <li>
-                        <a href="layout-variants.html">
+                        <a href="#">
                             <i class="linecons-desktop"></i>
                             <span class="title">Detail Report</span>
                         </a>
-                        <ul>
+                        <!--<ul>
                             <li>
                                 <a href="layout-variants.html">
                                     <span class="title">Transaksi Sales</span>
@@ -153,14 +148,14 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                     <span class="title">Transaksi Members</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </li>
                     <li>
-                        <a href="ui-panels.html">
+                        <a href="#">
                             <i class="linecons-note"></i>
                             <span class="title">Data</span>
                         </a>
-                        <ul>
+                        <!--<ul>
                             <li>
                                 <a href="ui-panels.html">
                                     <span class="title">Tenant</span>
@@ -171,15 +166,15 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                     <span class="title">Members</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </li>
                     <li>
-                        <a href="mailbox-main.html">
+                        <a href="#">
                             <i class="linecons-mail"></i>
                             <span class="title">Berita Acara</span>
-                            <span class="label label-success pull-right">5</span>
+                            <span class="label label-success pull-right"></span>
                         </a>
-                        <ul>
+                        <!--<ul>
                             <li>
                                 <a href="mailbox-compose.html">
                                     <span class="title">Buat Baru</span>
@@ -195,10 +190,10 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                     <span class="title">Outbox</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </li>
                     <li>
-                        <a href="ui-widgets.html">
+                        <a href="#">
                             <i class="linecons-star"></i>
                             <span class="title">Purchase Order</span>
                         </a></a>
@@ -562,115 +557,83 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
 					
 					// Pageviews Visitors Chart
-					var i = 0,
+					var i = 0;/*,
 						line_chart_data_source = [
-						{ id: ++i, part1: 4, part2: 2 },
-						{ id: ++i, part1: 5, part2: 3 },
-						{ id: ++i, part1: 5, part2: 3 },
-						{ id: ++i, part1: 4, part2: 2 },
-						{ id: ++i, part1: 3, part2: 1 },
-						{ id: ++i, part1: 3, part2: 2 },
-						{ id: ++i, part1: 5, part2: 3 },
-						{ id: ++i, part1: 7, part2: 4 },
-						{ id: ++i, part1: 9, part2: 5 },
-						{ id: ++i, part1: 7, part2: 4 },
-						{ id: ++i, part1: 7, part2: 3 },
-						{ id: ++i, part1: 11, part2: 6 },
-						{ id: ++i, part1: 10, part2: 8 },
-						{ id: ++i, part1: 9, part2: 7 },
-						{ id: ++i, part1: 8, part2: 7 },
-						{ id: ++i, part1: 8, part2: 7 },
-						{ id: ++i, part1: 8, part2: 7 },
-						{ id: ++i, part1: 8, part2: 6 },
-						{ id: ++i, part1: 15, part2: 5 },
-						{ id: ++i, part1: 10, part2: 5 },
-						{ id: ++i, part1: 9, part2: 6 },
-						{ id: ++i, part1: 9, part2: 3 },
-						{ id: ++i, part1: 8, part2: 5 },
-						{ id: ++i, part1: 8, part2: 4 },
-						{ id: ++i, part1: 9, part2: 5 },
-						{ id: ++i, part1: 8, part2: 6 },
-						{ id: ++i, part1: 8, part2: 5 },
-						{ id: ++i, part1: 7, part2: 6 },
-						{ id: ++i, part1: 7, part2: 5 },
-						{ id: ++i, part1: 6, part2: 5 },
-						{ id: ++i, part1: 7, part2: 6 },
-						{ id: ++i, part1: 7, part2: 5 },
-						{ id: ++i, part1: 8, part2: 5 },
-						{ id: ++i, part1: 6, part2: 5 },
-						{ id: ++i, part1: 5, part2: 4 },
-						{ id: ++i, part1: 5, part2: 3 },
-						{ id: ++i, part1: 6, part2: 3 },
-					];
-					
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+
+					];*/
+                    var line_chart_data_source = <?php echo $daily_trans_hour; ?>;
+
 					$("#pageviews-visitors-chart").dxChart({
 						dataSource: line_chart_data_source,
 						commonSeriesSettings: {
-							argumentField: "id",
-							point: { visible: true, size: 5, hoverStyle: {size: 7, border: 0, color: 'inherit'} },
+							argumentField: "jam",
+							point: { visible: true, size: 7, hoverStyle: {size: 10, border: 0, color: 'inherit'} },
 							line: {width: 1, hoverStyle: {width: 1}}
 						},
 						series: [
-							{ valueField: "part1", name: "Pageviews", color: "#68b828" },
-							{ valueField: "part2", name: "Visitors", color: "#eeeeee" },
+							{ valueField: "total", name: "Transaksi", color: "#68b828" },
+							//{ valueField: "grand", name: "Transaksi", color: "#eeeeee" },
 						],
 						legend: {
 							position: 'inside',
-							paddingLeftRight: 5
+							paddingLeftRight: 5,
+
 						},
+
 						commonAxisSettings: {
 							label: {
-								visible: false
+								visible: true
 							},
 							grid: {
 								visible: true,
 								color: '#f9f9f9'
 							}
 						},
+                        tooltip:{
+                            enabled: true,
+                            format: "numbers",
+
+                        },
+
 						valueAxis: {
-							max: 25
+							//max: 500
 						},
 						argumentAxis: {
-					        valueMarginsEnabled: false
+					        valueMarginsEnabled: true,
+                            max:22
 					    },
+
 					});
 					
 					
 					
 					// Server Uptime Chart
 					var bar1_data_source = [
-						{ year: 1, 	europe: 10, americas: 0, africa: 5 },
-						{ year: 2, 	europe: 20, americas: 5, africa: 15 },
-						{ year: 3, 	europe: 30, americas: 10, africa: 15 },
-						{ year: 4, 	europe: 40, americas: 15, africa: 30 },
-						{ year: 5, 	europe: 30, americas: 10, africa: 20 },
-						{ year: 6, 	europe: 20, americas: 5,  africa: 10 },
-						{ year: 7, 	europe: 10, americas: 15, africa: 0 },
-						{ year: 8, 	europe: 20, americas: 25, africa: 8 },
-						{ year: 9, 	europe: 30, americas: 35, africa: 16 },
-						{ year: 10,	europe: 40, americas: 45, africa: 24 },
-						{ year: 11,	europe: 50, americas: 40, africa: 32 },
+						{ year: 1, 	europe: 0, americas: 0, africa: 0 },
+						{ year: 2, 	europe: 0, americas: 0, africa: 0 },
+						{ year: 3, 	europe: 0, americas: 0, africa: 0 },
+						{ year: 4, 	europe: 0, americas: 0, africa: 0 },
 					];
 					
 					$("#server-uptime-chart").dxChart({
 						dataSource: [
 							{id: ++i, 	sales: 1},
-							{id: ++i, 	sales: 2},
-							{id: ++i, 	sales: 3},
-							{id: ++i, 	sales: 4},
-							{id: ++i, 	sales: 5},
-							{id: ++i, 	sales: 4},
-							{id: ++i, 	sales: 5},
-							{id: ++i, 	sales: 6},
-							{id: ++i, 	sales: 7},
-							{id: ++i, 	sales: 6},
-							{id: ++i, 	sales: 5},
-							{id: ++i, 	sales: 4},
-							{id: ++i, 	sales: 5},
-							{id: ++i, 	sales: 4},
-							{id: ++i, 	sales: 4},
-							{id: ++i, 	sales: 3},
-							{id: ++i, 	sales: 4},
+							{id: ++i, 	sales: 1},
+							{id: ++i, 	sales: 1},
+							{id: ++i, 	sales: 1},
+
 						],
 					 
 						series: {
@@ -706,16 +669,8 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					
 					// Average Sales Chart
 					var doughnut1_data_source = [
-						{region: "Asia", val: 4119626293},
-						{region: "Africa", val: 1012956064},
-						{region: "Northern America", val: 344124520},
-						{region: "Latin America and the Caribbean", val: 590946440},
-						{region: "Europe", val: 727082222},
-						{region: "Oceania", val: 35104756},
-						{region: "Oceania 1", val: 727082222},
-						{region: "Oceania 3", val: 727082222},
-						{region: "Oceania 4", val: 727082222},
-						{region: "Oceania 5", val: 727082222},
+						{region: "Asia", val: 1},
+
 					], timer;
 					
 					$("#sales-avg-chart div").dxPieChart({
@@ -1057,8 +1012,8 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					
 					<div class="chart-item-bg">
 						<div class="chart-label">
-							<div class="h3 text-secondary text-bold" data-count="this" data-from="0.00" data-to="14.85" data-suffix="%" data-duration="1">0.00%</div>
-							<span class="text-medium text-muted">More visitors</span>
+							<!--<div class="h3 text-secondary text-bold" data-count="this" data-from="0.00" data-to="14.85" data-suffix="%" data-duration="1">0.00%</div>
+							<span class="text-medium text-muted">More visitors</span>-->
 						</div>
 						<div id="pageviews-visitors-chart" style="height: 298px;"></div>
 					</div>
@@ -1069,7 +1024,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					<div class="chart-item-bg">
 						<div class="chart-label chart-label-small">
 							<div class="h4 text-purple text-bold" data-count="this" data-from="0.00" data-to="95.8" data-suffix="%" data-duration="1.5">0.00%</div>
-							<span class="text-small text-upper text-muted">Current Server Uptime</span>
+							<span class="text-small text-upper text-muted">Weekly Chart</span>
 						</div>
 						<div id="server-uptime-chart" style="height: 134px;"></div>
 					</div>
@@ -1111,23 +1066,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Top 5 Member Of The Month</h3>
 
-                                        <!--
-                                        div class="panel-options">
 
-                                            <a href="#" data-toggle="panel">
-                                                <span class="collapse-icon">&ndash;</span>
-                                            <span class="expand-icon">+</span>
-                                        </a>
-
-                                        <a href="#" data-toggle="reload">
-                                            <i class="fa-rotate-right"></i>
-                                        </a>
-
-                                        <a href="#" data-toggle="remove">
-                                            &times;
-                                        </a>
-                                    </div>
-                                    -->
                                     </div>
 
                                     <table class="table table-condensed">
@@ -1138,13 +1077,13 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                             <div class="col-md-4">
                                 <div class="panel panel-flat">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Top 5 Member Of The Year</h3>
+                                        <h3 class="panel-title">Top 5 Tenant Of The Month</h3>
 
 
                                     </div>
 
                                     <table class="table table-condensed">
-                                        <?php echo $db->top5_member_year(); ?>
+                                        <?php echo $db->top5_tenant_month(); ?>
                                     </table>
                                 </div>
                             </div>
@@ -1170,7 +1109,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
             <!-- Gafik Tahunan range bulan dan sales -->
 
             <?php include('page/transaksi_sales.tpl');?>
-            <?php include('page/transaksi_sales_hour.tpl');?>
+            <?php// include('page/transaksi_sales_hour.tpl');?>
 			<?php include('page/top5_member.tpl');?>
             <?php include('page/top5_tenant.tpl');?>
    			<!-- Main Footer -->

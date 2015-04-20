@@ -1,4 +1,7 @@
-
+<?php
+$Top5_Member=$db->top5_member();
+$Top5_Member_Month=$db->top5_member_month();
+?>
             <div class="row">
                 <div class="col-sm-12">
                     <div class="panel panel-default">

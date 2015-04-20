@@ -1,4 +1,7 @@
-
+<?php
+$Top5_Tenant=$db->top5_Tenant();
+$Top5_Tenant_Month=$db->top5_tenant_month();
+?>
             <div class="row">
                 <div class="col-sm-12">
 
