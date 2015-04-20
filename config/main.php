@@ -12,11 +12,11 @@
  * Database definations
  */
 define ('db_type', 'MYSQL');
-define ('db_host', '10.10.99.3');
+define ('db_host', 'localhost');
 define ('db_port', '3306');
 define ('db_name', 'report');
-define ('db_user', 'labtest1');
-define ('db_pass', 'asd123');
+define ('db_user', 'root');
+define ('db_pass', '');
 define ('db_table_prefix', '');
 
 
@@ -56,14 +56,38 @@ class database{
             $data[]=@row;
         return $data;
     }
-
+    //<Dashboard>
     //hitung jumah member
-    function member_count() {
-        $rs = $this->db_query2('SELECT count(Card_No) FROM Tab_Member');
+
+    function daily_sales() {
+        $rs = $this->db_query2("SELECT Val_1 FROM Tab_Val where Val_Nm='Total_Grand_Hari'");
         //$defval= mysql_fetch_object($rs);
         $row = mysql_fetch_row($rs);
         return  ($row[0]);
     }
+
+    function daily_trans() {
+        $rs = $this->db_query2("SELECT Val_1 FROM Tab_Val where Val_Nm='Total_Trans_Hari'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
+    function daily_trans_all() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Total_Trans_Hari'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
+    function daily_member() {
+        $rs = $this->db_query2("SELECT Val_1 FROM Tab_Val where Val_Nm='Total_Member_Hari'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
+    //</Dashboard>
 
     //TOP 5 member
     function top5_member() {
@@ -131,6 +155,13 @@ class database{
         $fillbody = $fillbody . '<tbody>';
 
         return  ($fillhead.$fillbody);
+    }
+
+    function total_member() {
+        $rs = $this->db_query2("SELECT Val_1 FROM Tab_Val where Val_Nm='Total_Member'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
     }
 
     //TOP 5 Tenant

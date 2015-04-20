@@ -2,7 +2,10 @@
 require_once ('config/main.php');
 $db=new database();
 $db->db_connect();
-$member_count=$db->member_count();
+//$member_count=$db->member_count();
+$daily_sales=$db->daily_sales();
+$daily_trans=$db->daily_trans();
+$daily_member=$db->daily_member();
 $Top5_Member=$db->top5_member();
 $Top5_Member_Month=$db->top5_member_month();
 $Top5_Tenant=$db->top5_Tenant();
@@ -477,7 +480,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 						
 					</li>
 					
-					<li class="dropdown user-profile">
+					<!--<li class="dropdown user-profile">
 						<a href="#" data-toggle="dropdown">
 							<img src="assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 							<span>
@@ -518,13 +521,13 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 								</a>
 							</li>
 						</ul>
-					</li>
+					</li>-->
 					
-					<li>
+					<!--<li>
 						<a href="#" data-toggle="chat">
 							<i class="fa-comments-o"></i>
 						</a>
-					</li>
+					</li>-->
 					
 				</ul>
 				
@@ -552,7 +555,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							"hideMethod": "fadeOut"
 						};
 				
-						toastr.info("You have been awarded with 1 year free subscription. Enjoy it!", "Account Subcription Updated", opts);
+						toastr.info("20-Apr-2015!", "Last Updated", opts);
 					}, 3000);
 					
 					// Charts
@@ -1019,36 +1022,36 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			<div class="row">
 				<div class="col-sm-3">
 					
-					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="" data-suffix="" data-duration="2">
+					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="<?php echo $daily_sales; ?>" data-suffix="" data-duration="2">
 						<div class="xe-icon">
 							<i class="linecons-money"></i>
 						</div>
 						<div class="xe-label">
-							<strong class="num">0.0%</strong>
-							<span>Total Sales (IDR)</span>
+							<strong class="num">Rp. </strong>
+							<span>Daily Sales (IDR)</span>
 						</div>
 					</div>
 
-					<div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $member_count; ?>" data-suffix="" data-duration="1" data-easing="false">
+                    <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="1000" data-to="<?php echo $daily_trans; ?>" data-duration="4" data-easing="true">
+                        <div class="xe-icon">
+                            <i class="fa-credit-card"></i>
+                        </div>
+                        <div class="xe-label">
+                            <strong class="num">1000</strong>
+                            <span>Daily Trans</span>
+                        </div>
+                    </div>
+
+                    <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $daily_member; ?>" data-suffix="" data-duration="1" data-easing="false">
 						<div class="xe-icon">
 							<i class="linecons-user"></i>
 						</div>
 						<div class="xe-label">
 							<strong class="num">1k</strong>
-							<span>Total Member</span>
+							<span>Daily Member</span>
 						</div>
 					</div>
-					
-					<div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="1000" data-to="2470" data-duration="4" data-easing="true">
-						<div class="xe-icon">
-							<i class="linecons-camera"></i>
-						</div>
-						<div class="xe-label">
-							<strong class="num">1000</strong>
-							<span>New Daily Photos</span>
-						</div>
-					</div>
-					
+
 				</div>
 				<div class="col-sm-6">
 					
@@ -1085,68 +1088,84 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			</div>
 			
 			
-			<div class="row">
-				<div class="col-sm-6">
-					
-					<div class="chart-item-bg">
-						<div id="pageviews-stats" style="height: 320px; padding: 20px 0;"></div>
-						
-						<div class="chart-entry-view">
-							<div class="chart-entry-label">
-								Pageviews
-							</div>
-							<div class="chart-entry-value">
-								<div class="sparkline first-month"></div>
-							</div>
-						</div>
-						
-						<div class="chart-entry-view">
-							<div class="chart-entry-label">
-								Visitors
-							</div>
-							<div class="chart-entry-value">
-								<div class="sparkline second-month"></div>
-							</div>
-						</div>
-						
-						<div class="chart-entry-view">
-							<div class="chart-entry-label">
-								Converted Sales
-							</div>
-							<div class="chart-entry-value">
-								<div class="sparkline third-month"></div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-				<div class="col-sm-6">
-					
-					<div class="chart-item-bg">
-						<div class="chart-label">
-							<div id="network-mbs-packets" class="h1 text-purple text-bold" data-count="this" data-from="0.00" data-to="21.05" data-suffix="mb/s" data-duration="1">0.00mb/s</div>
-							<span class="text-small text-muted text-upper">Download Speed</span>
-						</div>
-						<div class="chart-right-legend">
-							<div id="network-realtime-gauge" style="width: 170px; height: 140px"></div>
-						</div>
-						<div id="realtime-network-stats" style="height: 320px"></div>
-					</div>
-					
-					<div class="chart-item-bg">
-						<div class="chart-label">
-							<div id="network-mbs-packets" class="h1 text-secondary text-bold" data-count="this" data-from="0.00" data-to="67.35" data-suffix="%" data-duration="1.5">0.00%</div>
-							<span class="text-small text-muted text-upper">CPU Usage</span>
-							
-							<p class="text-medium" style="width: 50%; margin-top: 10px">Sentiments two occasional affronting solicitude travelling and one contrasted. Fortune day out married parties.</p>
-						</div>
-						<div id="other-stats" style="min-height: 183px">
-							<div id="cpu-usage-gauge" style="width: 170px; height: 140px; position: absolute; right: 20px; top: 20px"></div>
-						</div>
-					</div>
-					
-				</div>
-			</div>
+			<!-- Dashboard top of the month -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">TOP 5 Data</h3>
+                            <div class="panel-options">
+                                <a href="#" data-toggle="panel">
+                                    <span class="collapse-icon">&ndash;</span>
+                                    <span class="expand-icon">+</span>
+                                </a>
+                                <a href="#" data-toggle="remove">
+                                    &times;
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <div class="col-md-4">
+                                <div class="panel panel-flat" >
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Top 5 Member Of The Month</h3>
+
+                                        <!--
+                                        div class="panel-options">
+
+                                            <a href="#" data-toggle="panel">
+                                                <span class="collapse-icon">&ndash;</span>
+                                            <span class="expand-icon">+</span>
+                                        </a>
+
+                                        <a href="#" data-toggle="reload">
+                                            <i class="fa-rotate-right"></i>
+                                        </a>
+
+                                        <a href="#" data-toggle="remove">
+                                            &times;
+                                        </a>
+                                    </div>
+                                    -->
+                                    </div>
+
+                                    <table class="table table-condensed">
+                                        <?php echo $db->top5_member_month(); ?>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Top 5 Member Of The Year</h3>
+
+
+                                    </div>
+
+                                    <table class="table table-condensed">
+                                        <?php echo $db->top5_member_year(); ?>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">New Member</h3>
+
+
+                                    </div>
+
+                                    <table class="table table-condensed">
+                                        <?php echo $db->top5_member_new(); ?>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Gafik Tahunan range bulan dan sales -->
 
@@ -1185,7 +1204,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 		</div>
 		
 			
-		<!-- start: Chat Section -->
+		<!-- start: Chat Section
 		<div id="chat" class="fixed">
 			
 			<div class="chat-inner">
@@ -1267,7 +1286,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			
 			</div>
 			
-			<!-- conversation template -->
+			<!-- conversation template
 			<div class="chat-conversation">
 				
 				<div class="conversation-header">
@@ -1309,7 +1328,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 				
 			</div>
 			
-		</div>
+		</div>-->
 		<!-- end: Chat Section -->
     <div class="modal fade" id="modal-1">
         <div class="modal-dialog">
