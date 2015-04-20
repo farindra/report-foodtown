@@ -1104,7 +1104,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                                 </a>
                             </div>
                         </div>
-                        
+
                         <div class="panel-body">
                             <div class="col-md-4">
                                 <div class="panel panel-flat" >

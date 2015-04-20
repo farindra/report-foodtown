@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37be418d-906c-443e-89cb-1f31e77dbf48" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-1.php" afterPath="$PROJECT_DIR$/dashboard-1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/main.php" afterPath="$PROJECT_DIR$/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="37be418d-906c-443e-89cb-1f31e77dbf48" name="Default" comment="" />
     <ignored path="report-foodtown.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,7 +60,7 @@
       <file leaf-file-name="dashboard-1.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard-1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1106" column="24" selection-start="34570" selection-end="34570" vertical-scroll-proportion="0.17851959" vertical-offset="5385" max-vertical-offset="9299">
+            <state line="1106" column="0" selection-start="34546" selection-end="34546" vertical-scroll-proportion="0.17851959" vertical-offset="5385" max-vertical-offset="9299">
               <folding>
                 <element signature="tag#head#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
@@ -736,7 +732,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard-1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1106" column="24" selection-start="34570" selection-end="34570" vertical-scroll-proportion="0.17851959" vertical-offset="5385" max-vertical-offset="9299">
+        <state line="1106" column="0" selection-start="34546" selection-end="34546" vertical-scroll-proportion="0.17851959" vertical-offset="5385" max-vertical-offset="9299">
           <folding>
             <element signature="tag#head#0;tag#html#0" expanded="false" />
             <element signature="tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
