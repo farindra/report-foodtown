@@ -1002,10 +1002,14 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <div id="val-member-daily" class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member(); ?>" data-suffix="" data-duration="1" data-easing="false">
 =======
                     <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member();//$daily_member; ?>" data-suffix="" data-duration="1" data-easing="false" id="val-member">
 >>>>>>> origin/master
+=======
+                    <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $daily_member; ?>" data-suffix="" data-duration="1" data-easing="false">
+>>>>>>> parent of 0190c89... ngetes phone gap
 =======
                     <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $daily_member; ?>" data-suffix="" data-duration="1" data-easing="false">
 >>>>>>> parent of 0190c89... ngetes phone gap
@@ -1015,10 +1019,14 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 						<div class="xe-label">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<strong class="num"><?php echo $db->daily_member(); ?></strong>
 =======
 							<strong class="num"><?php echo $db->daily_member();//$daily_member; ?></strong>
 >>>>>>> origin/master
+=======
+							<strong class="num">1k</strong>
+>>>>>>> parent of 0190c89... ngetes phone gap
 =======
 							<strong class="num">1k</strong>
 >>>>>>> parent of 0190c89... ngetes phone gap
@@ -1317,6 +1325,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 	</div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script type="text/javascript">
         $(document).ready(function() {
             $(function() {
@@ -1336,6 +1345,9 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 
     <script type="text/javascript">
         $(document).ready(function() {
+=======
+	
+>>>>>>> parent of 0190c89... ngetes phone gap
 
             $(function() {
                 startRefresh();
