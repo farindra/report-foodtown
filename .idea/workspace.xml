@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37be418d-906c-443e-89cb-1f31e77dbf48" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/main.php" afterPath="$PROJECT_DIR$/config/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard-1.php" afterPath="$PROJECT_DIR$/dashboard-1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/main.php" afterPath="$PROJECT_DIR$/config/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/top5_member.tpl" afterPath="$PROJECT_DIR$/page/top5_member.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/top5_tenant.tpl" afterPath="$PROJECT_DIR$/page/top5_tenant.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/xenon-components.css" afterPath="$PROJECT_DIR$/assets/css/xenon-components.css" />
+>>>>>>> parent of 0190c89... ngetes phone gap
     </list>
     <list id="d2abd86f-eb71-42fb-a421-df0dad77a745" name="Failed commit: Default" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;dashboard-1.php&#10;" />
     <ignored path="report-foodtown.iws" />
@@ -65,7 +74,11 @@
       <file leaf-file-name="dashboard-1.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard-1.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="1320" column="0" selection-start="41753" selection-end="41753" vertical-scroll-proportion="-7.576923" vertical-offset="22046" max-vertical-offset="23392">
+=======
+            <state line="54" column="32" selection-start="2303" selection-end="2340" vertical-scroll-proportion="1.7621951" vertical-offset="51" max-vertical-offset="22882">
+>>>>>>> parent of 0190c89... ngetes phone gap
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -708,6 +721,40 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="2007" selection-end="2007" vertical-scroll-proportion="-16.807692" vertical-offset="498" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="60" selection-start="2533" selection-end="2540" vertical-scroll-proportion="-7.8461537" vertical-offset="1326" max-vertical-offset="4658">
+          <folding>
+            <marker date="1429518414682" expanded="true" signature="1550:1607" placeholder="SELECT Val_1..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="1787:1844" placeholder="SELECT Val_1..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="2028:2088" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="2269:2327" placeholder="SELECT Val_1..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="2512:2571" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="2790:2845" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="3031:3092" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="3825:3885" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="4601:4660" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="5372:5425" placeholder="SELECT Val_1..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="5624:5679" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="5865:5926" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="6643:6703" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="7419:7478" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="8201:8260" placeholder="SELECT Val_J..Tab_Val..." />
+            <marker date="1429518414682" expanded="true" signature="8460:8518" placeholder="SELECT Val_J..Tab_Val..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> parent of 0190c89... ngetes phone gap
     <entry file="file://$PROJECT_DIR$/page/top5_tenant.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="2" selection-start="89" selection-end="89" vertical-scroll-proportion="11.115385" vertical-offset="357" max-vertical-offset="1989">
@@ -779,6 +826,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard-1.php">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state line="1320" column="0" selection-start="41753" selection-end="41753" vertical-scroll-proportion="-7.576923" vertical-offset="22046" max-vertical-offset="23392">
           <folding>
@@ -800,6 +848,10 @@
     <entry file="file://$PROJECT_DIR$/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.55791503" vertical-offset="0" max-vertical-offset="4709">
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="32" selection-start="2303" selection-end="2340" vertical-scroll-proportion="1.7621951" vertical-offset="51" max-vertical-offset="22882">
+>>>>>>> parent of 0190c89... ngetes phone gap
           <folding>
             <marker date="1429589133878" expanded="true" signature="1641:1698" placeholder="SELECT Val_1..Tab_Val..." />
             <marker date="1429589133878" expanded="true" signature="1878:1935" placeholder="SELECT Val_1..Tab_Val..." />

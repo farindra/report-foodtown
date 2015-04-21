@@ -560,7 +560,20 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
 					
 					// Pageviews Visitors Chart
-					var j = 0;/*,
+					var i = 0;/*,
+						line_chart_data_source = [
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
+                            { id: ++i, part1: 1, part2: 2 },
 
 					];*/
                     var line_chart_data_source = <?php echo $db->daily_trans_hour();//$daily_trans_hour; ?>;
@@ -573,7 +586,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							line: {width: 1, hoverStyle: {width: 1}}
 						},
 						series: [
-							{ valueField: "total", name: "Transaksi (Realtime)", color: "#68b828" },
+							{ valueField: "total", name: "Transaksi", color: "#68b828" },
 							//{ valueField: "grand", name: "Transaksi", color: "#eeeeee" },
 						],
 						legend: {
@@ -619,10 +632,10 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					
 					$("#server-uptime-chart").dxChart({
 						dataSource: [
-							{id: ++j, 	sales: 1},
-							{id: ++j, 	sales: 1},
-							{id: ++j, 	sales: 1},
-							{id: ++j, 	sales: 1},
+							{id: ++i, 	sales: 1},
+							{id: ++i, 	sales: 1},
+							{id: ++i, 	sales: 1},
+							{id: ++i, 	sales: 1},
 
 						],
 					 
@@ -967,40 +980,48 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			<div class="row">
 				<div class="col-sm-3">
 					
-					<div id="val-sales-daily" class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="<?php echo $daily_sales; ?>" data-suffix="" data-duration="2">
+					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="<?php echo $daily_sales; ?>" data-suffix="" data-duration="2">
 						<div class="xe-icon">
 							<i class="linecons-money"></i>
 						</div>
 						<div class="xe-label">
-							<strong class="num"><?php echo $db->daily_sales(); ?></strong>
+							<strong class="num">Rp. </strong>
 							<span>Daily Sales (IDR)</span>
 						</div>
 					</div>
 
-                    <div id="val-trans-daily" class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="1000" data-to="<?php echo $db->daily_trans(); ?>" data-duration="4" data-easing="true">
+                    <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="1000" data-to="<?php echo $daily_trans; ?>" data-duration="4" data-easing="true">
                         <div class="xe-icon">
                             <i class="fa-credit-card"></i>
                         </div>
                         <div class="xe-label">
-                            <strong class="num"><?php echo $db->daily_trans(); ?></strong>
+                            <strong class="num">1000</strong>
                             <span>Daily Trans</span>
                         </div>
                     </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <div id="val-member-daily" class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member(); ?>" data-suffix="" data-duration="1" data-easing="false">
 =======
                     <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member();//$daily_member; ?>" data-suffix="" data-duration="1" data-easing="false" id="val-member">
 >>>>>>> origin/master
+=======
+                    <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $daily_member; ?>" data-suffix="" data-duration="1" data-easing="false">
+>>>>>>> parent of 0190c89... ngetes phone gap
 						<div class="xe-icon">
 							<i class="linecons-user"></i>
 						</div>
 						<div class="xe-label">
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<strong class="num"><?php echo $db->daily_member(); ?></strong>
 =======
 							<strong class="num"><?php echo $db->daily_member();//$daily_member; ?></strong>
 >>>>>>> origin/master
+=======
+							<strong class="num">1k</strong>
+>>>>>>> parent of 0190c89... ngetes phone gap
 							<span>Daily Member</span>
 						</div>
 					</div>
@@ -1295,6 +1316,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 		<div class="loader-2"></div>
 	</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script type="text/javascript">
         $(document).ready(function() {
             $(function() {
@@ -1318,6 +1340,9 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
             $(function() {
                 startRefresh();
             });
+=======
+	
+>>>>>>> parent of 0190c89... ngetes phone gap
 
             function startRefresh() {
                 setTimeout(startRefresh,3000);
