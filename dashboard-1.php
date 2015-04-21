@@ -529,8 +529,10 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			</nav>
 
 			<script type="text/javascript">
+
 				jQuery(document).ready(function($)
-				{	
+				{
+
 					// Notifications
 					setTimeout(function()
 					{			
@@ -551,6 +553,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 						};
 				
 						toastr.info("20-Apr-2015!", "Last Updated", opts);
+
 					}, 3000);
 					
 					// Charts
@@ -560,7 +563,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					var j = 0;/*,
 
 					];*/
-                    var line_chart_data_source = <?php echo $daily_trans_hour; ?>;
+                    var line_chart_data_source = <?php echo $db->daily_trans_hour();//$daily_trans_hour; ?>;
 
 					$("#pageviews-visitors-chart").dxChart({
 						dataSource: line_chart_data_source,
@@ -984,12 +987,20 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div id="val-member-daily" class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member(); ?>" data-suffix="" data-duration="1" data-easing="false">
+=======
+                    <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member();//$daily_member; ?>" data-suffix="" data-duration="1" data-easing="false" id="val-member">
+>>>>>>> origin/master
 						<div class="xe-icon">
 							<i class="linecons-user"></i>
 						</div>
 						<div class="xe-label">
+<<<<<<< HEAD
 							<strong class="num"><?php echo $db->daily_member(); ?></strong>
+=======
+							<strong class="num"><?php echo $db->daily_member();//$daily_member; ?></strong>
+>>>>>>> origin/master
 							<span>Daily Member</span>
 						</div>
 					</div>
@@ -1283,6 +1294,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 	<div class="page-loading-overlay">
 		<div class="loader-2"></div>
 	</div>
+<<<<<<< HEAD
     <script type="text/javascript">
         $(document).ready(function() {
             $(function() {
@@ -1297,7 +1309,25 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
             }
         });
     </script>
+=======
+    <div id="joko"></div>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(function() {
+                startRefresh();
+            });
+
+            function startRefresh() {
+                setTimeout(startRefresh,3000);
+                $('#val-member').load(location.href + ' #val-member').fadeIn("slow");
+                //$('#val-member').reload;
+            }
+>>>>>>> origin/master
+
+        });
+    </script>
 
 
 	<!-- Bottom Scripts -->

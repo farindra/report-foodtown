@@ -12,11 +12,14 @@
  * Database definations
  */
 define ('db_type', 'MYSQL');
-define ('db_host', '10.10.99.3');
+//define ('db_host', '10.10.99.3');
+define ('db_host', 'localhost');
 define ('db_port', '3306');
 define ('db_name', 'report');
-define ('db_user', 'labtest1');
-define ('db_pass', 'asd123');
+//define ('db_user', 'labtest1');
+define ('db_user', 'root');
+//define ('db_pass', 'asd123');
+define ('db_pass', '');
 define ('db_table_prefix', '');
 
 
