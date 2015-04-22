@@ -6,12 +6,12 @@
  *	www.laborator.co 
  */
 
-include  '../config/main.php';
+require_once ('config/main.php');
 $db=new database();
 $db->db_connect();
-	$user = 'demo';
-	$pass = 'demo';
-
+	//$user = 'demo';
+	//$pass = 'demo';
+	
 	
 	$resp = array('accessGranted' => false, 'errors' => ''); // For ajax response
 	
@@ -19,7 +19,7 @@ $db->db_connect();
 	{
 		$given_username = $_POST['username'];
 		$given_password = $_POST['passwd'];
-            $cek_login = $db->cek_login($given_username,$given_password);
+		$cek_login = $db->cek_login($given_username,$given_password);
 		//if($user == strtolower($given_username) && $pass == $given_password)
         if($cek_login == '11')
 		{
@@ -28,6 +28,7 @@ $db->db_connect();
 		}
 		else
 		{
+
 			// Failed Attempts
 			$fa = isset($_COOKIE['failed-attempts']) ? $_COOKIE['failed-attempts'] : 0;
 			$fa++;

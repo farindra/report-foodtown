@@ -50,6 +50,20 @@ class database{
         return mysql_query($query);
     }
 
+    function cek_login($nm,$ps) {
+        $rs = $this->db_query2("SELECT count(user) as res1 FROM Tab_User where user='".$nm."'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        $dNm=($row[0]);
+
+        //$ps=$ps.'1212';
+        $rs = $this->db_query2("SELECT count(pass) as res1 FROM Tab_User where user='".$ps."'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        $dPs=($row[0]);
+        return  ($dNm.$dPs);
+    }
+
     function db_listdata($query) {
         $sql_tampil= mysql_query($query);
         while($row=mysql_fetch_array($sql_tampil));
@@ -89,6 +103,13 @@ class database{
 
     function daily_trans_hour() {
         $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Total_Hour_Hari'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
+    function week_trans_day() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Total_Grand_Weekly'");
         //$defval= mysql_fetch_object($rs);
         $row = mysql_fetch_row($rs);
         return  ($row[0]);
