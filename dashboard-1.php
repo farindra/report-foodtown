@@ -151,9 +151,9 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         </ul>-->
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="extra-login.html">
                             <i class="linecons-note"></i>
-                            <span class="title">Data</span>
+                            <span class="title">Data <?php echo $db->cek_login('demo','demo');?></span>
                         </a>
                         <!--<ul>
                             <li>
@@ -200,6 +200,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                     </li>
                 </ul>
             </div>
+
         </div>
 
         <div class="main-content">
@@ -549,30 +550,32 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							"showMethod": "fadeIn",
 							"hideMethod": "fadeOut"
 						};
-				
 						toastr.info("20-Apr-2015!", "Last Updated", opts);
 					}, 3000);
-					
+
+                    $(function() {
+                        startRefresh();
+                    });
+
+                    //auto reload data
+                    function startRefresh() {
+                        setTimeout(startRefresh,3000);
+                        //$('#dasboard-item1').load(location.href + ' #dasboard-item1').fadeToggle();
+                        //$('#dasboard-item1').load(location.href + ' #dasboard-item1').fadeToggle(3000);
+                        //setTimeout(startRefresh,1000);
+                        //$('#dasboard-item2').load(location.href + ' #dasboard-item2').fadeToggle();
+                        //$('#dasboard-item2').load(location.href + ' #dasboard-item2').fadeToggle(3000);setTimeout(startRefresh,1000);
+                        //$('#dasboard-item3').load(location.href + ' #dasboard-item3').fadeToggle();
+                        //$('#dasboard-item3').load(location.href + ' #dasboard-item3').fadeToggle(3000);setTimeout(startRefresh,1000);
+                        //$('#dash-1').load(location.href + ' #dash-1').fadeIn("slow");
+                        //$('#val-member-daily').load(location.href + ' #val-member-daily').fadeIn("slow");
+                        //$('#val-member').reload;
+                    }
 					// Charts
 					var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
 					
 					// Pageviews Visitors Chart
-					var i = 0;/*,
-						line_chart_data_source = [
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-                            { id: ++i, part1: 1, part2: 2 },
-
-					];*/
+					var i = 0;
                     var line_chart_data_source = <?php echo $daily_trans_hour; ?>;
 
 					$("#pageviews-visitors-chart").dxChart({
@@ -583,23 +586,34 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							line: {width: 1, hoverStyle: {width: 1}}
 						},
 						series: [
-							{ valueField: "total", name: "Transaksi", color: "#68b828" },
+							{ valueField: "total",
+                                name: "Transaksi",
+                                color: "#68b828",
+                                label:{
+                                    visible: true,
+                                    transparent:10,
+                                    customizeText: function (){
+                                        return this.valueText;
+                                    }
+                                },
+                            },
 							//{ valueField: "grand", name: "Transaksi", color: "#eeeeee" },
 						],
 						legend: {
 							position: 'inside',
-							paddingLeftRight: 5,
 
 						},
 
 						commonAxisSettings: {
 							label: {
 								visible: true
+
 							},
 							grid: {
 								visible: true,
 								color: '#f9f9f9'
 							}
+
 						},
                         tooltip:{
                             enabled: true,
@@ -625,30 +639,35 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 						{ year: 2, 	europe: 0, americas: 0, africa: 0 },
 						{ year: 3, 	europe: 0, americas: 0, africa: 0 },
 						{ year: 4, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 5, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 6, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 7, 	europe: 0, americas: 0, africa: 0 },
 					];
-					
-					$("#server-uptime-chart").dxChart({
-						dataSource: [
-							{id: ++i, 	sales: 1},
-							{id: ++i, 	sales: 1},
-							{id: ++i, 	sales: 1},
-							{id: ++i, 	sales: 1},
 
-						],
+                    var serveruptime = <?php echo $db->week_trans_day();?>;
+
+					$("#server-uptime-chart").dxChart({
+						dataSource: serveruptime,
 					 
 						series: {
-							argumentField: "id",
-							valueField: "sales",
+							argumentField: "tgl",
+							valueField: "total",
 							name: "Sales",
 							type: "bar",
-							color: '#7c38bc'
+							color: '#7c38bc',
+                            label:{
+                                visible: true,
+                                customizeText: function (){
+                                    return this.valueText+' Jt';
+                                }
+                            },
 						},
 						commonAxisSettings: {
 							label: {
 								visible: false
 							},
 							grid: {
-								visible: false
+								visible: true
 							}
 						},
 						legend: {
@@ -658,16 +677,66 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					        valueMarginsEnabled: true
 					    },
 						valueAxis: {
-							max: 12
+							max: 100
 						},
 						equalBarWidth: {
-							width: 11
+							width: 17
 						}
 					});
-					
-					
-					
-					// Average Sales Chart
+
+                    // Server Uptime Chart
+                    var bar1_data_source2 = [
+                        { year: 1, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 2, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 3, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 4, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 5, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 6, 	europe: 0, americas: 0, africa: 0 },
+                        { year: 7, 	europe: 0, americas: 0, africa: 0 },
+                    ];
+
+                    var serveruptime2 = <?php echo $db->week_trans_day();?>;
+
+                    $("#server-uptime-chart2").dxChart({
+                        dataSource: serveruptime,
+
+                        series: {
+                            argumentField: "tgl",
+                            valueField: "total",
+                            name: "Sales",
+                            type: "bar",
+                            color: '#7c38bc',
+                            label:{
+                                visible: true,
+                                customizeText: function (){
+                                    return this.valueText+' Jt';
+                                }
+                            },
+                        },
+                        commonAxisSettings: {
+                            label: {
+                                visible: true
+                            },
+                            grid: {
+                                visible: true
+                            }
+                        },
+                        legend: {
+                            visible: false
+                        },
+                        argumentAxis: {
+                            valueMarginsEnabled: true
+                        },
+                        valueAxis: {
+                            max: 100
+                        },
+                        equalBarWidth: {
+                            width: 17
+                        }
+                    });
+
+
+                    // Average Sales Chart
 					var doughnut1_data_source = [
 						{region: "Asia", val: 1},
 
@@ -917,6 +986,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					{
 						$("#pageviews-visitors-chart").data("dxChart").render();
 						$("#server-uptime-chart").data("dxChart").render();
+                        $("#server-uptime-chart2").data("dxChart").render();
 						$("#realtime-network-stats").data("dxChart").render();
 						
 						$('.first-month').data("dxSparkline").render();
@@ -974,35 +1044,35 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 				}
 			</script>
 			
-			<div class="row">
-				<div class="col-sm-3">
+			<div id="dasboard-item" class="row">
+				<div  class="col-sm-3">
 					
-					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="<?php echo $daily_sales; ?>" data-suffix="" data-duration="2">
+					<div  class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="<?php echo $db->daily_sales(); ?>" data-suffix="" data-duration="2">
 						<div class="xe-icon">
 							<i class="linecons-money"></i>
 						</div>
-						<div class="xe-label">
-							<strong class="num">Rp. </strong>
+						<div id="dasboard-item1" class="xe-label">
+							<?php echo '<strong class="num">'.$db->daily_sales().'</strong>'; ?>
 							<span>Daily Sales (IDR)</span>
 						</div>
 					</div>
 
-                    <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="1000" data-to="<?php echo $daily_trans; ?>" data-duration="4" data-easing="true">
+                    <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="1000" data-to="<?php echo $db->daily_trans(); ?>" data-duration="4" data-easing="true">
                         <div class="xe-icon">
                             <i class="fa-credit-card"></i>
                         </div>
-                        <div class="xe-label">
-                            <strong class="num">1000</strong>
+                        <div id="dasboard-item2" class="xe-label">
+                            <strong class="num"><?php echo $db->daily_trans(); ?></strong>
                             <span>Daily Trans</span>
                         </div>
                     </div>
 
-                    <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $daily_member; ?>" data-suffix="" data-duration="1" data-easing="false">
+                    <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member(); ?>" data-suffix="" data-duration="1" data-easing="false">
 						<div class="xe-icon">
 							<i class="linecons-user"></i>
 						</div>
-						<div class="xe-label">
-							<strong class="num">1k</strong>
+						<div id="dasboard-item3" class="xe-label">
+							<?php echo '<strong class="num">'.$db->daily_member().'</strong>'; ?>
 							<span>Daily Member</span>
 						</div>
 					</div>
@@ -1040,6 +1110,15 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					</div>
 					
 				</div>
+                <div class="col-sm-12">
+                    <div class="chart-item-bg">
+                        <div class="chart-label chart-label-small">
+                            <div class="h4 text-purple text-bold" data-count="this" data-from="0.00" data-to="95.8" data-suffix="%" data-duration="1.5">0.00%</div>
+                            <span class="text-small text-upper text-muted">Weekly Chart</span>
+                        </div>
+                        <div id="server-uptime-chart2" style="height: 200px;"></div>
+                    </div>
+                </div>
 			</div>
 			
 			
@@ -1296,8 +1375,32 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 	<div class="page-loading-overlay">
 		<div class="loader-2"></div>
 	</div>
-	
 
+    <script type="text/javascript">
+                $(document).ready(function() {
+                       $(function() {
+                               startRefresh();
+                       });
+                        function startRefresh() {
+                                setTimeout(startRefresh,3000);.fadeToggle();
+                                $('#dasboard-item1').load(location.href + ' #dasboard-item1').fadeToggle();
+                                $('#dasboard-item1').load(location.href + ' #dasboard-item1').fadeIn("slow");
+                               // $('#dash-1').fadeIn("10000");//.load(location.href + ' #val-trans-daily').fadeIn("slow");
+                                //$('#val-member-daily').load(location.href + ' #val-member-daily').fadeIn("slow");
+                                //$('#val-member').reload;
+                        }
+
+                    function startRefresh2() {
+                        setTimeout(startRefresh,3000);.fadeToggle();
+                        $('#dasboard-item2').load(location.href + ' #dasboard-item2').fadeToggle();
+                        $('#dasboard-item2').load(location.href + ' #dasboard-item2').fadeIn("slow");
+                        // $('#dash-1').fadeIn("10000");//.load(location.href + ' #val-trans-daily').fadeIn("slow");
+                        //$('#val-member-daily').load(location.href + ' #val-member-daily').fadeIn("slow");
+                        //$('#val-member').reload;
+                    }
+
+                });
+    </script>
 
 
 	<!-- Bottom Scripts -->
