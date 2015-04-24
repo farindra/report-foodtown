@@ -728,7 +728,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                             valueMarginsEnabled: true
                         },
                         valueAxis: {
-                            max: 100
+                            //max: 100
                         },
                         equalBarWidth: {
                             width: 17
@@ -1108,16 +1108,39 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							<div style="position: absolute; top: 25px; right: 0; left: 40%; bottom: 0"></div>
 						</div>
 					</div>
-					
 				</div>
-                <div class="col-sm-12">
-                    <div class="chart-item-bg">
-                        <div class="chart-label chart-label-small">
-                            <div class="h4 text-purple text-bold" data-count="this" data-from="0.00" data-to="95.8" data-suffix="%" data-duration="1.5">0.00%</div>
-                            <span class="text-small text-upper text-muted">Weekly Chart</span>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">WEEKLY DATA</h3>
+                          <div class="panel-options">
+                              
+
+                            <a href="#" data-toggle="panel">
+                                <span class="collapse-icon">&ndash;</span>
+                                <span class="expand-icon">+</span>
+                            </a>
+                            <a href="#" data-toggle="remove">
+                                &times;
+                            </a>
                         </div>
-                        <div id="server-uptime-chart2" style="height: 200px;"></div>
+                      </div>
+
+                        <div class="panel-body">
+
+
+                            <div class="chart-item-bg">
+                                <div class="chart-label chart-label-small">
+                                    <!--<div class="h4 text-purple text-bold" data-count="this" data-from="0.00" data-to="95.8" data-suffix="%" data-duration="1.5">0.00%</div>
+                                    <span class="text-small text-upper text-muted">Weekly Chart</span>-->
+                                </div>
+                                <div id="server-uptime-chart2" style="height: 200px;"></div>
+                            </div>
+                        </div>
                     </div>
+                  </div>
                 </div>
 			</div>
 			
