@@ -550,7 +550,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							"showMethod": "fadeIn",
 							"hideMethod": "fadeOut"
 						};
-						toastr.info("20-Apr-2015!", "Last Updated", opts);
+						//toastr.info("20-Apr-2015!", "Last Updated", opts);
 					}, 3000);
 
                     $(function() {
@@ -586,21 +586,19 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							line: {width: 1, hoverStyle: {width: 1}}
 						},
 						series: [
-							{ valueField: "total",
-                                name: "Transaksi",
-                                color: "#68b828",
-                                label:{
-                                    visible: true,
-                                    transparent:10,
-                                    customizeText: function (){
-                                        return this.valueText;
-                                    }
-                                },
+							{ valueField: "1",name: "Today",color: "#0066ff",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "2",name: "Yesterday",color: "#68b828",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "3",name: "2 Day ago",color: "#fcff00",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
                             },
 							//{ valueField: "grand", name: "Transaksi", color: "#eeeeee" },
 						],
 						legend: {
-							position: 'inside',
+							position: 'outside',
 
 						},
 
@@ -655,12 +653,12 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							name: "Sales",
 							type: "bar",
 							color: '#7c38bc',
-                            label:{
-                                visible: true,
-                                customizeText: function (){
-                                    return this.valueText+' Jt';
-                                }
-                            },
+                           // label:{
+                           //     visible: true,
+                           //     customizeText: function (){
+                           //         return this.valueText+' Jt';
+                           //     }
+                           // },
 						},
 						commonAxisSettings: {
 							label: {
@@ -738,7 +736,17 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 
                     // Average Sales Chart
 					var doughnut1_data_source = [
-						{region: "Asia", val: 1},
+                        //15.64
+                        //15.38
+                        //23.4
+                        //18.82
+                        //22.78
+                        //73.2
+                        //86.69
+
+                        {region: "Asia", val: 10},
+                        {region: "Euor", val: 15},
+                        {region: "USA", val: 20},
 
 					], timer;
 					
@@ -1101,7 +1109,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					
 					<div class="chart-item-bg">
 						<div class="chart-label chart-label-small">
-							<div class="h4 text-secondary text-bold" data-count="this" data-from="0.00" data-to="320.45" data-decimal="," data-duration="2">0</div>
+							<div class="h4 text-secondary text-bold" data-suffix=" Jt" data-count="this" data-from="0.00" data-to="36" data-decimal="," data-duration="2">0</div>
 							<span class="text-small text-upper text-muted">Avg. of Sales</span>
 						</div>
 						<div id="sales-avg-chart" style="height: 134px; position: relative;">
@@ -1116,7 +1124,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                       <div class="panel-heading">
                         <h3 class="panel-title">WEEKLY DATA</h3>
                           <div class="panel-options">
-                              
+
 
                             <a href="#" data-toggle="panel">
                                 <span class="collapse-icon">&ndash;</span>
