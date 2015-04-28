@@ -1219,7 +1219,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
             <!-- Gafik Tahunan range bulan dan sales -->
 
             <?php include('page/transaksi_sales.tpl');?>
-            <?php// include('page/transaksi_sales_hour.tpl');?>
+            <?php include('page/transaksi_sales_hour.tpl');?>
 			<?php include('page/top5_member.tpl');?>
             <?php include('page/top5_tenant.tpl');?>
    			<!-- Main Footer -->

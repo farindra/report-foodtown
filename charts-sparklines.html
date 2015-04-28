@@ -1443,7 +1443,7 @@
 									
 									changeFilter = function(e) {
 										var count = e.options[e.selectedIndex].value;
-										source.filter(['month', '<=', count]);
+										source.filter(['month', '<>', count]);
 										source.load();
 									};
 									
