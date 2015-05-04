@@ -51,143 +51,294 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 		<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
 		<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
 		<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
-        <?php include ('page/nav-main.tpl');?>
+		<div class="sidebar-menu toggle-others fixed">
+			
+			<div class="sidebar-menu-inner">	
+				
+				<header class="logo-env">
+					
+					<!-- logo -->
+					<div class="logo">
+						<a href="dashboard-1.php" class="logo-expanded">
+							<img src="assets/images/logo-lg.png" width="100" alt="" />
+						</a>
+						
+						<a href="dashboard-1.php" class="logo-collapsed">
+							<img src="assets/images/logo-lg.png" width="40" alt="" />
+						</a>
+					</div>
+					
+					<!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+					<div class="mobile-menu-toggle visible-xs">
+						<a href="#" data-toggle="user-info-menu">
+							<i class="fa-bell-o"></i>
+							<span class="badge badge-success">7</span>
+						</a>
+						
+						<a href="#" data-toggle="mobile-menu">
+							<i class="fa-bars"></i>
+						</a>
+					</div>
+					
+					<!-- This will open the popup with user profile settings, you can use for any purpose, just be creative
+					<div class="settings-icon">
+						<a href="#" data-toggle="settings-pane" data-animate="true">
+							<i class="linecons-cog"></i>
+						</a>
+					</div>-->
+					
+								
+				</header>
+						
+				
+						
+				<ul id="main-menu" class="main-menu">
+					<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+					<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+					<li class="active opened active">
+						<a href="dashboard-1.php">
+							<i class="linecons-cog"></i>
+							<span class="title">Dashboard</span>
+						</a>
+                        <!--<ul>
+                            <li class="active">
+                                <a href="dashboard-1.html">
+                                    <span class="title">Dashboard 1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-2.html">
+                                    <span class="title">Dashboard 2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-3.html">
+                                    <span class="title">Dashboard 3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-4.html">
+                                    <span class="title">Dashboard 4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="skin-generator.html">
+                                    <span class="title">Skin Generator</span>
+                                </a>
+                            </li>
+                        </ul>-->
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="linecons-desktop"></i>
+                            <span class="title">Detail Report</span>
+                        </a>
+                        <!--<ul>
+                            <li>
+                                <a href="layout-variants.html">
+                                    <span class="title">Transaksi Sales</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-collapsed-sidebar.html">
+                                    <span class="title">Transaksi Tenant</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-static-sidebar.html">
+                                    <span class="title">Transaksi Members</span>
+                                </a>
+                            </li>
+                        </ul>-->
+                    </li>
+                    <li>
+                        <a href="extra-login.html">
+                            <i class="linecons-note"></i>
+                            <span class="title">Data <?php echo $db->cek_login('demo','demo');?></span>
+                        </a>
+                        <!--<ul>
+                            <li>
+                                <a href="ui-panels.html">
+                                    <span class="title">Tenant</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui-buttons.html">
+                                    <span class="title">Members</span>
+                                </a>
+                            </li>
+                        </ul>-->
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="linecons-mail"></i>
+                            <span class="title">Berita Acara</span>
+                            <span class="label label-success pull-right"></span>
+                        </a>
+                        <!--<ul>
+                            <li>
+                                <a href="mailbox-compose.html">
+                                    <span class="title">Buat Baru</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailbox-main.html">
+                                    <span class="title">Inbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailbox-message.html">
+                                    <span class="title">Outbox</span>
+                                </a>
+                            </li>
+                        </ul>-->
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="linecons-star"></i>
+                            <span class="title">Purchase Order</span>
+                        </a></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
 
         <div class="main-content">
 
             <!-- User Info, Notifications and Menu Bar -->
 			<nav class="navbar user-info-navbar" role="navigation">
-
+				
 				<!-- Left links for user info navbar -->
 				<ul class="user-info-menu left-links list-inline list-unstyled">
-
+					
 					<li class="hidden-sm hidden-xs">
 						<a href="#" data-toggle="sidebar">
 							<i class="fa-bars"></i>
 						</a>
 					</li>
-
+					
 					<li class="dropdown hover-line">
 						<a href="#" data-toggle="dropdown">
 							<i class="fa-envelope-o"></i>
 							<span class="badge badge-green">15</span>
 						</a>
-
+							
 						<ul class="dropdown-menu messages">
 							<li>
-
+									
 								<ul class="dropdown-menu-list list-unstyled ps-scrollbar">
-
+								
 									<li class="active"><!-- "active" class means message is unread -->
 										<a href="#">
 											<span class="line">
 												<strong>Luc Chartier</strong>
 												<span class="light small">- yesterday</span>
 											</span>
-
+											
 											<span class="line desc small">
 												This ain’t our first item, it is the best of the rest.
 											</span>
 										</a>
 									</li>
-
+									
 									<li class="active">
 										<a href="#">
 											<span class="line">
 												<strong>Salma Nyberg</strong>
 												<span class="light small">- 2 days ago</span>
 											</span>
-
+											
 											<span class="line desc small">
-												Oh he decisively impression attachment friendship so if everything.
+												Oh he decisively impression attachment friendship so if everything. 
 											</span>
 										</a>
 									</li>
-
+									
 									<li>
 										<a href="#">
 											<span class="line">
 												Hayden Cartwright
 												<span class="light small">- a week ago</span>
 											</span>
-
+											
 											<span class="line desc small">
 												Whose her enjoy chief new young. Felicity if ye required likewise so doubtful.
 											</span>
 										</a>
 									</li>
-
+									
 									<li>
 										<a href="#">
 											<span class="line">
 												Sandra Eberhardt
 												<span class="light small">- 16 days ago</span>
 											</span>
-
+											
 											<span class="line desc small">
 												On so attention necessary at by provision otherwise existence direction.
 											</span>
 										</a>
 									</li>
-
+									
 									<!-- Repeated -->
-
+									
 									<li class="active"><!-- "active" class means message is unread -->
 										<a href="#">
 											<span class="line">
 												<strong>Luc Chartier</strong>
 												<span class="light small">- yesterday</span>
 											</span>
-
+											
 											<span class="line desc small">
 												This ain’t our first item, it is the best of the rest.
 											</span>
 										</a>
 									</li>
-
+									
 									<li class="active">
 										<a href="#">
 											<span class="line">
 												<strong>Salma Nyberg</strong>
 												<span class="light small">- 2 days ago</span>
 											</span>
-
+											
 											<span class="line desc small">
-												Oh he decisively impression attachment friendship so if everything.
+												Oh he decisively impression attachment friendship so if everything. 
 											</span>
 										</a>
 									</li>
-
+									
 									<li>
 										<a href="#">
 											<span class="line">
 												Hayden Cartwright
 												<span class="light small">- a week ago</span>
 											</span>
-
+											
 											<span class="line desc small">
 												Whose her enjoy chief new young. Felicity if ye required likewise so doubtful.
 											</span>
 										</a>
 									</li>
-
+									
 									<li>
 										<a href="#">
 											<span class="line">
 												Sandra Eberhardt
 												<span class="light small">- 16 days ago</span>
 											</span>
-
+											
 											<span class="line desc small">
 												On so attention necessary at by provision otherwise existence direction.
 											</span>
 										</a>
 									</li>
-
+									
 								</ul>
-
+								
 							</li>
-
+							
 							<li class="external">
 								<a href="blank-sidebar.html">
 									<span>All Messages</span>
@@ -196,13 +347,13 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							</li>
 						</ul>
 					</li>
-
+					
 					<li class="dropdown hover-line">
 						<a href="#" data-toggle="dropdown">
 							<i class="fa-bell-o"></i>
 							<span class="badge badge-purple">7</span>
 						</a>
-
+							
 						<ul class="dropdown-menu notifications">
 							<li class="top">
 								<p class="small">
@@ -210,87 +361,87 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 									You have <strong>3</strong> new notifications.
 								</p>
 							</li>
-
+							
 							<li>
 								<ul class="dropdown-menu-list list-unstyled ps-scrollbar">
 									<li class="active notification-success">
 										<a href="#">
 											<i class="fa-user"></i>
-
+											
 											<span class="line">
 												<strong>New user registered</strong>
 											</span>
-
+											
 											<span class="line small time">
 												30 seconds ago
 											</span>
 										</a>
 									</li>
-
+									
 									<li class="active notification-secondary">
 										<a href="#">
 											<i class="fa-lock"></i>
-
+											
 											<span class="line">
 												<strong>Privacy settings have been changed</strong>
 											</span>
-
+											
 											<span class="line small time">
 												3 hours ago
 											</span>
 										</a>
 									</li>
-
+									
 									<li class="notification-primary">
 										<a href="#">
 											<i class="fa-thumbs-up"></i>
-
+											
 											<span class="line">
 												<strong>Someone special liked this</strong>
 											</span>
-
+											
 											<span class="line small time">
 												2 minutes ago
 											</span>
 										</a>
 									</li>
-
+									
 									<li class="notification-danger">
 										<a href="#">
 											<i class="fa-calendar"></i>
-
+											
 											<span class="line">
 												John cancelled the event
 											</span>
-
+											
 											<span class="line small time">
 												9 hours ago
 											</span>
 										</a>
 									</li>
-
+									
 									<li class="notification-info">
 										<a href="#">
 											<i class="fa-database"></i>
-
+											
 											<span class="line">
 												The server is status is stable
 											</span>
-
+											
 											<span class="line small time">
 												yesterday at 10:30am
 											</span>
 										</a>
 									</li>
-
+									
 									<li class="notification-warning">
 										<a href="#">
 											<i class="fa-envelope-o"></i>
-
+											
 											<span class="line">
 												New comments waiting approval
 											</span>
-
+											
 											<span class="line small time">
 												last week
 											</span>
@@ -298,7 +449,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 									</li>
 								</ul>
 							</li>
-
+							
 							<li class="external">
 								<a href="#">
 									<span>View all notifications</span>
@@ -307,25 +458,25 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							</li>
 						</ul>
 					</li>
-
+					
 				</ul>
-
-
+				
+				
 				<!-- Right links for user info navbar -->
 				<ul class="user-info-menu right-links list-inline list-unstyled">
-
+					
 					<li class="search-form"><!-- You can add "always-visible" to show make the search input visible -->
-
+						
 						<form method="get" action="extra-search.html">
 							<input type="text" name="s" class="form-control search-field" placeholder="Type to search..." />
-
+							
 							<button type="submit" class="btn btn-link">
 								<i class="linecons-search"></i>
 							</button>
 						</form>
-
+						
 					</li>
-
+					
 					<!--<li class="dropdown user-profile">
 						<a href="#" data-toggle="dropdown">
 							<img src="assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
@@ -334,7 +485,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 								<i class="fa-angle-down"></i>
 							</span>
 						</a>
-
+						
 						<ul class="dropdown-menu user-profile-menu list-unstyled">
 							<li>
 								<a href="#edit-profile">
@@ -368,15 +519,15 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							</li>
 						</ul>
 					</li>-->
-
+					
 					<!--<li>
 						<a href="#" data-toggle="chat">
 							<i class="fa-comments-o"></i>
 						</a>
 					</li>-->
-
+					
 				</ul>
-
+				
 			</nav>
 
 			<script type="text/javascript">
@@ -1020,12 +1171,12 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         </div>
                     </div>
 
-                    <div class="xe-widget xe-counter xe-counter-purple" >
+                    <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="10" data-to="<?php echo $db->daily_member(); ?>" data-suffix="" data-duration="1" data-easing="false">
 						<div class="xe-icon">
 							<i class="linecons-user"></i>
 						</div>
 						<div id="dasboard-item3" class="xe-label">
-							<?php echo '<strong class="num">'.(double)$db->daily_member().' of '.(double)$db->daily_member_all().'</strong>'; ?>
+							<?php echo '<strong class="num">'.$db->daily_member().'</strong>'; ?>
 							<span>Daily Member</span>
 						</div>
 					</div>
@@ -1200,28 +1351,28 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 			<!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->
 			<!-- Or class "fixed" to  always fix the footer to the end of page -->
 			<footer class="main-footer sticky footer-type-1">
-
+				
 				<div class="footer-inner">
-
+				
 					<!-- Add your copyright text here -->
 					<div class="footer-text">
 						&copy; 2015
 						<strong>Lukison Group</strong>
 						theme by <a href="http://foodtown.co.id" target="_blank">Foodtown</a>
 					</div>
-
-
+					
+					
 					<!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
 					<div class="go-up">
-
+					
 						<a href="#" rel="go-top">
 							<i class="fa-angle-up"></i>
 						</a>
-
+						
 					</div>
-
+					
 				</div>
-
+				
 			</footer>
 		</div>
 		
