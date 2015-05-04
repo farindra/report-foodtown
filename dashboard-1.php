@@ -7,6 +7,7 @@ $daily_sales=$db->daily_sales();
 $daily_trans=$db->daily_trans();
 $daily_member=$db->daily_member();
 $daily_trans_hour=$db->daily_trans_hour();
+$daily_trans_hour_7=$db->daily_trans_hour_7();
 $Trans_Years_All=$db->trans_years_all();
 $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
 
@@ -573,18 +574,20 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                     }
 					// Charts
 					var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
-					
-					// Pageviews Visitors Chart
-					var i = 0;
+                    var i = 0;
+                    // transaksi harian per 3 hari (/jam)
+
                     var line_chart_data_source = <?php echo $daily_trans_hour; ?>;
 
 					$("#pageviews-visitors-chart").dxChart({
 						dataSource: line_chart_data_source,
 						commonSeriesSettings: {
+
 							argumentField: "jam",
 							point: { visible: true, size: 7, hoverStyle: {size: 10, border: 0, color: 'inherit'} },
 							line: {width: 1, hoverStyle: {width: 1}}
 						},
+                        title: 'Hourly Transaction',
 						series: [
 							{ valueField: "1",name: "Today",color: "#0066ff",
                                 //label:{ visible: true, customizeText: function (){return this.valueText;}},
@@ -598,7 +601,9 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 							//{ valueField: "grand", name: "Transaksi", color: "#eeeeee" },
 						],
 						legend: {
-							position: 'outside',
+							//position: 'outside',
+                            verticalAlignment: "bottom",
+                            horizontalAlignment: "center"
 
 						},
 
@@ -620,15 +625,90 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         },
 
 						valueAxis: {
+                            title: 'Total Transaction',
 							//max: 500
 						},
 						argumentAxis: {
+                            title: 'Hours',
 					        valueMarginsEnabled: true,
                             max:22
 					    },
 
 					});
-					
+
+                    // transaksi harian per 7 hari (/jam)
+
+                    var data_hari_jam = <?php echo $daily_trans_hour_7; ?>;
+
+                    $("#server-uptime-chart3").dxChart({
+                        dataSource: data_hari_jam,
+                        commonSeriesSettings: {
+                            argumentField: "jam",
+                            point: { visible: true, size: 7, hoverStyle: {size: 10, border: 0, color: 'inherit'} },
+                            line: {width: 1, hoverStyle: {width: 1}}
+                        },
+                        series: [
+                            { valueField: "1",name: "Today",color: "#0066ff",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "2",name: "Yesterday",color: "#68b828",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "3",name: "2 Day ago",color: "#fcff00",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "4",name: "3 Day ago",color: "#ff8a00",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "5",name: "4 Day ago",color: "#00eaff",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "6",name: "5 Day ago",color: "#ea00ff",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "7",name: "6 Day ago",color: "#7100c0",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            { valueField: "8",name: "7 Day ago",color: "#a6a6a6",
+                                //label:{ visible: true, customizeText: function (){return this.valueText;}},
+                            },
+                            //{ valueField: "grand", name: "Transaksi", color: "#eeeeee" },
+                        ],
+                        legend: {
+                            //position: 'outside',
+                            verticalAlignment: "bottom",
+                            horizontalAlignment: "center"
+
+                        },
+
+                        commonAxisSettings: {
+                            label: {
+                                visible: true
+
+                            },
+                            grid: {
+                                visible: true,
+                                color: '#f9f9f9'
+                            }
+
+                        },
+                        tooltip:{
+                            enabled: true,
+                            format: "numbers",
+
+                        },
+
+                        valueAxis: {
+                            title: 'Total Transaction',
+                            //max: 500
+                        },
+                        argumentAxis: {
+                            title: 'Hours',
+                            valueMarginsEnabled: true,
+                            max:22
+                        },
+
+                    });
 					
 					
 					// Server Uptime Chart
@@ -677,9 +757,17 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 						valueAxis: {
 							max: 100
 						},
+                        tooltip:{
+                            enabled: true,
+                            format: "numbers",
+                            customizeText: function (){
+                                         return this.valueText+' Jt';
+                                     }
+                        },
 						equalBarWidth: {
 							width: 17
 						}
+
 					});
 
                     // Server Uptime Chart
@@ -693,24 +781,22 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         { year: 7, 	europe: 0, americas: 0, africa: 0 },
                     ];
 
-                    var serveruptime2 = <?php echo $db->week_trans_day();?>;
+                    var serveruptime2 = <?php echo $db->week_trans_day_month();?>;
 
                     $("#server-uptime-chart2").dxChart({
-                        dataSource: serveruptime,
+                        dataSource: serveruptime2,
+                        commonSeriesSettings: {
+                            argumentField: "name"
 
-                        series: {
-                            argumentField: "tgl",
-                            valueField: "total",
-                            name: "Sales",
-                            type: "bar",
-                            color: '#7c38bc',
-                            label:{
-                                visible: true,
-                                customizeText: function (){
-                                    return this.valueText+' Jt';
-                                }
-                            },
                         },
+                        series: [
+                            {valueField: "total4",name: "#1 week",type: "bar",color: '#ff6868'},
+                            {valueField: "total3",name: "#2 week",type: "bar",color: '#ffdd68'},
+                            {valueField: "total2",name: "#3 week",type: "bar",color: '#68ff6f'},
+                            {valueField: "total1",name: "#4 week",type: "bar",color: '#7c38bc'},
+
+                        ],
+
                         commonAxisSettings: {
                             label: {
                                 visible: true
@@ -720,13 +806,23 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                             }
                         },
                         legend: {
-                            visible: false
+                            visible: true,
+                            verticalAlignment: "bottom",
+                            horizontalAlignment: "center"
                         },
                         argumentAxis: {
                             valueMarginsEnabled: true
                         },
                         valueAxis: {
                             //max: 100
+
+                        },
+                        tooltip:{
+                            enabled: true,
+                            format: "numbers",
+                            customizeText: function (){
+                                return this.valueText+' Jt';
+                            }
                         },
                         equalBarWidth: {
                             width: 17
@@ -1101,8 +1197,8 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					
 					<div class="chart-item-bg">
 						<div class="chart-label chart-label-small">
-							<div class="h4 text-purple text-bold" data-count="this" data-from="0.00" data-to="95.8" data-suffix="%" data-duration="1.5">0.00%</div>
-							<span class="text-small text-upper text-muted">Weekly Chart</span>
+							<!--<div class="h4 text-purple text-bold" data-count="this" data-from="0.00" data-to="95.8" data-suffix="%" data-duration="1.5">0.00%</div>-->
+							<span class="text-small text-upper text-muted">Weekly Sales Chart</span>
 						</div>
 						<div id="server-uptime-chart" style="height: 134px;"></div>
 					</div>
@@ -1110,7 +1206,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					<div class="chart-item-bg">
 						<div class="chart-label chart-label-small">
 							<div class="h4 text-secondary text-bold" data-suffix=" Jt" data-count="this" data-from="0.00" data-to="36" data-decimal="," data-duration="2">0</div>
-							<span class="text-small text-upper text-muted">Avg. of Sales</span>
+							<span class="text-small text-upper text-muted">Avg. of </br>Weekly Sales</span>
 						</div>
 						<div id="sales-avg-chart" style="height: 134px; position: relative;">
 							<div style="position: absolute; top: 25px; right: 0; left: 40%; bottom: 0"></div>
@@ -1118,11 +1214,10 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 					</div>
 				</div>
 
-                <div class="row">
                   <div class="col-sm-12">
                     <div class="panel panel-default">
                       <div class="panel-heading">
-                        <h3 class="panel-title">WEEKLY DATA</h3>
+                        <h3 class="panel-title">WEEKLY DATA (DAY)</h3>
                           <div class="panel-options">
 
 
@@ -1149,6 +1244,35 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
                         </div>
                     </div>
                   </div>
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">WEEKLY DATA (HOUR)</h3>
+                            <div class="panel-options">
+
+
+                                <a href="#" data-toggle="panel">
+                                    <span class="collapse-icon">&ndash;</span>
+                                    <span class="expand-icon">+</span>
+                                </a>
+                                <a href="#" data-toggle="remove">
+                                    &times;
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+
+
+                            <div class="chart-item-bg">
+                                <div class="chart-label chart-label-small">
+                                    <!--<div class="h4 text-purple text-bold" data-count="this" data-from="0.00" data-to="95.8" data-suffix="%" data-duration="1.5">0.00%</div>
+                                    <span class="text-small text-upper text-muted">Weekly Chart</span>-->
+                                </div>
+                                <div id="server-uptime-chart3" style="height: 500px;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 			</div>
 			
@@ -1219,7 +1343,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
             <!-- Gafik Tahunan range bulan dan sales -->
 
             <?php include('page/transaksi_sales.tpl');?>
-            <?php include('page/transaksi_sales_hour.tpl');?>
+            <?php// include('page/transaksi_sales_hour.tpl');?>
 			<?php include('page/top5_member.tpl');?>
             <?php include('page/top5_tenant.tpl');?>
    			<!-- Main Footer -->
@@ -1399,9 +1523,9 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
             </div>
         </div>
     </div>
-		
+
 	</div>
-	
+    <div><?php// echo $db->week_trans_day_month();?></div>
 	
 	<div class="page-loading-overlay">
 		<div class="loader-2"></div>

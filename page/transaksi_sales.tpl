@@ -80,14 +80,14 @@
                     });
                 </script>
                 <div id="bar-3" style="height: 400px; width: 100%;"></div>
-                <div style="margin-top: 15px">Choose a number of months:
+               <!-- <div style="margin-top: 15px">Choose a number of months:
                     <select onchange="changeFilter(this)">
                         <option selected>2015</option>
                         <option>2014</option>
                         <option>2013</option>
                         <option>2012</option>
                     </select>
-                </div>
+                </div>-->
             </div>
         </div>
 

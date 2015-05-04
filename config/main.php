@@ -108,8 +108,22 @@ class database{
         return  ($row[0]);
     }
 
+    function daily_trans_hour_7() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Total_Hour_Hari_7'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
     function week_trans_day() {
         $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Total_Grand_Weekly'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
+    function week_trans_day_month() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Total_Grand_Weekly_Month'");
         //$defval= mysql_fetch_object($rs);
         $row = mysql_fetch_row($rs);
         return  ($row[0]);
