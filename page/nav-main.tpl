@@ -92,9 +92,16 @@
                         </a>
                     </li>-->
                     <li>
-                        <a href="tenant-menu.php">
-                            <span class="title">Transaksi Tenant</span>
+                        <a href="#">
+                            <span class="title">Tenant</span>
                         </a>
+                        <ul>
+                            <li>
+                                <a href="tenant-menu-all.php">
+                                    <span class="title">Top Menu All</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>

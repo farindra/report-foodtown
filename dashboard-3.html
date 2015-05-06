@@ -1087,22 +1087,27 @@
 					$("#doughnut-1").dxPieChart({
 						dataSource: doughnut1_data_source,
 						tooltip: {
-							enabled: false,
+							enabled: true,
 						  	format:"millions",
 							customizeText: function() { 
 								return this.argumentText + "<br/>" + this.valueText;
 							}
 						},
 						size: {
-							height: 130
+							height: 150
 						},
 						legend: {
-							visible: false
-						},  
-						series: [{
-							type: "doughnut",
-							argumentField: "region"
-						}],
+							visible: true
+						},
+                        commonSeriesSettings: {
+                            argumentField: "region"
+                        },
+						series: [
+                            {type: "doughnut"},
+                            {type: "doughnut"},
+
+                        ],
+
 						palette: xenonPalette
 					});
 					
@@ -1266,20 +1271,20 @@
 			</script>
 			
 			<div class="row">
-				<div class="col-sm-12">
-					
-					<div class="chart-item-bg-2">
-						<div class="chart-item-num" data-count="this" data-from="0" data-to="98" data-suffix="%" data-duration="2">0%</div>
-						<div class="chart-item-desc">
-							<p class="col-lg-7">Carriage quitting securing be appetite it declared. High eyes kept so busy feel call in.</p>
-						</div>
-						<div class="chart-item-env">
-							<div id="doughnut-1" style="width: 200px;"></div>
-						</div>
-					</div>
-					
-				</div>
-			</div>
+                <div class="col-sm-12">
+
+                    <div class="chart-item-bg-2">
+                        <div class="chart-item-num" data-count="this" data-from="0" data-to="98" data-suffix="%" data-duration="2">0%</div>
+                        <div class="chart-item-desc">
+                            <p class="col-lg-7">Carriage quitting securing be appetite it declared. High eyes kept so busy feel call in.</p>
+                        </div>
+                        <div class="chart-item-env">
+                            <div id="doughnut-1" style="width: 200px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 			
 			<div class="row">
 				<div class="col-sm-6">

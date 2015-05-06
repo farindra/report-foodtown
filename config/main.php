@@ -282,6 +282,14 @@ class database{
         return  ($fillhead.$fillbody);
     }
 
+    //top menu
+    function tenant_menu_top_all() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Tenant_Top_Menu_All'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+        return  ($row[0]);
+    }
+
     //Tansaksi
     function trans_years_all() {
         $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Trans_Years_All'");
