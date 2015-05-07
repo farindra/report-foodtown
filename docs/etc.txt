@@ -1,0 +1,65 @@
+
+								jQuery(document).ready(function($)
+								{
+									var source = new DevExpress.data.DataSource({
+										load: function(loadOptions) {
+											var d = $.Deferred();
+											$.getJSON('data/sparklineResourceData.json').done(function(data) {
+												var filteredData = DevExpress.data
+												  .query(data)
+												  .filter(loadOptions.filter)
+												  .toArray();
+												d.resolve(filteredData);
+											});
+											return d.promise();
+										},
+										filter: ['month', '<=', '12']
+									});
+
+									var alumOptions = {
+										dataSource: source,
+										argumentField: 'month',
+										valueField: 'alum2010-2',
+										type: 'bar',
+										showMinMax: true
+									},
+									nickOptions = {
+										dataSource: source,
+										argumentField: 'month',
+										valueField: 'nickel2010',
+										type: 'bar',
+										showMinMax: true,
+										showFirstLast: false,
+										barPositiveColor: '#fcd036',
+										minColor: '#d5080f',
+										maxColor: '#68b828'
+									},
+									copOptions = {
+										dataSource: source,
+										argumentField: 'month',
+										valueField: 'copper2010',
+										type: 'bar',
+										barPositiveColor: '#0e62c7',
+										firstLastColor: '#7c38bc'
+									};
+
+									changeFilter = function(e) {
+										var count = e.options[e.selectedIndex].value;
+										source.filter(['month', '<>', count]);
+										source.load();
+									};
+
+									$('.alum2010-2').dxSparkline(alumOptions);
+									$('.nick2010-2').dxSparkline(nickOptions);
+									$('.cop2010-2').dxSparkline(copOptions);
+
+									$('.alum2011-2').dxSparkline($.extend(alumOptions, { valueField: 'alum2011-2' }));
+									$('.nick2011-2').dxSparkline($.extend(nickOptions, { valueField: 'nickel2011-2' }));
+									$('.cop2011-2').dxSparkline($.extend(copOptions, { valueField: 'copper2011-2' }));
+
+									$('.alum2012-2').dxSparkline($.extend(alumOptions, { valueField: 'alum2012-2' }));
+									$('.nick2012-2').dxSparkline($.extend(nickOptions, { valueField: 'nickel2012' }));
+									$('.cop2012-2').dxSparkline($.extend(copOptions, { valueField: 'copper2012' }));
+
+								});
+

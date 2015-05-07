@@ -41,7 +41,7 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 
 <!-- User Info, Notifications and Menu Bar -->
 
-<?php include ('page/nav-top.tpl');
+<?php include ('page/nav-top.tpl'); include ('page/tabel_tenant_menu.tpl');
 $defval=$db->tenant_menu_top_all();
 $defval1='data_source';
 ?>
@@ -49,10 +49,67 @@ $defval1='data_source';
 <script type="text/javascript">
 jQuery(document).ready(function($)
 {
-    // Doughnut 1
     var <?php echo $defval1; ?> = <?php echo $defval; ?>
+    //gauge
+    $('#bar-gauge-3').append(
+        '<div id="gauge" style="width: 80%; height: 100%; margin-top: 20px; float: left;"></div>',
+        '<div id="panel" style="width: 20%; text-align: left; margin-top: 20px; float: left;"></div>'
+    );
 
-  for (0 = 1; i <= 25; i++) {
+    var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
+
+    //var products =[
+    //    { name: 'Hummers', count: 41 },
+    //    { name: 'Shovers', count: 32 },
+    //    { name: 'Ladders', count: 13 },
+    //    { name: 'Watering cans', count: 48 },
+    //    { name: 'Screwdrivers', count: 24 },
+    //    { name: 'Nail pullers', count: 8 },
+    //    { name: 'Drills', count: 19 }
+    //];
+    //alert(products["name"]);
+    var gauge = $('#gauge').dxBarGauge({
+        startValue: 0,
+        endValue: 50000,
+        label: {
+            format: 'fixedPoint',
+            precision: 0
+        },
+        palette: xenonPalette
+    }).dxBarGauge('instance');
+
+    $('#panel').append($.map(data_source, function (product) {
+
+        return $('<div></div>').append(
+            // if(product.tenant1!=="undefined"'){
+            '<input type="checkbox" class="cbr" value="' + product.value1 + '" checked></input>',
+            '<span style="margin-left: 10px;">' + product.tenant1 + '</span>'
+            // }
+        );
+
+    }));
+
+    var $inputs = $('#panel input').change(handleChange);
+
+    function handleChange () {
+        var values = $.map($inputs, function (input) {
+            return $(input).prop('checked') ? $(input).val() : null;
+        });
+        gauge.values(values);
+    }
+
+    handleChange();
+    cbr_replace();
+
+
+    return;
+
+
+
+    // Doughnut 1
+
+
+  for (i = 1; i <= 25; i++) {
         var deftenant = '#tenant'+i;
 
     $(deftenant).dxPieChart({
@@ -70,6 +127,10 @@ jQuery(document).ready(function($)
         legend: {
             visible: false
         },
+        //label: {
+        //    format: 'fixedPoint',
+        //    precision: 0
+        //},
         series: [{
             type: "doughnut",
             argumentField: 'tenant'+i
@@ -118,7 +179,8 @@ jQuery(document).ready(function($)
         //$('#val-member').reload;
     }
     // Charts
-    var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
+
+
     var i = 0;
     // transaksi harian per 3 hari (/jam)
 

@@ -1,5 +1,7 @@
+<div id="bar-gauge-3" style="height: 440px; width: 100%;"></div>
 <?php
 for ($x=1;$x <=25;$x++){
+
 echo '<div class="row">';
 echo    '<div class="col-sm-12">';
 echo        '<div class="chart-item-bg-2">';

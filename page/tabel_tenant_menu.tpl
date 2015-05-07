@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Daftar Menu Teant</h3>
+
+        <div class="panel-options">
+            <a href="#" data-toggle="panel">
+                <span class="collapse-icon">&ndash;</span>
+                <span class="expand-icon">+</span>
+            </a>
+            <a href="#" data-toggle="remove">
+                &times;
+            </a>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <script type="text/javascript">
+            jQuery(document).ready(function($)
+            {
+                $("#tabel-tenant-menu").dataTable().yadcf([
+                    {column_number : 0},
+                    {column_number : 1, filter_type: 'text'},
+                    {column_number : 2, filter_type: 'text'},
+                    {column_number : 3, filter_type: 'text'},
+                ]);
+            });
+        </script>
+
+        <table class="table table-striped table-bordered" id="tabel-tenant-menu">
+            <thead>
+                <tr class="replace-inputs">
+                    <th>Tenant</th>
+                    <th>Menu</th>
+                    <th>Harga</th>
+                    <th>Total (QTY)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php echo $db->tenant_menu_top_all_table(); ?>
+            </tbody>
+            <tfoot>
+                <tr class="replace-inputs">
+                    <th>Tenant</th>
+                    <th>Menu</th>
+                    <th>Harga</th>
+                    <th>Total (QTY)</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

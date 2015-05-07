@@ -166,6 +166,9 @@ class database{
         return  ($fillhead.$fillbody);
     }
 
+
+
+
     function top5_member_year() {
         $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Top5_Member_Year'");
         //$defval= mysql_fetch_object($rs);
@@ -285,9 +288,29 @@ class database{
     //top menu
     function tenant_menu_top_all() {
         $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Tenant_Top_Menu_All'");
-        //$defval= mysql_fetch_object($rs);
+        $defval= mysql_fetch_object($rs);
         $row = mysql_fetch_row($rs);
         return  ($row[0]);
+    }
+
+     function tenant_menu_top_all_table() {
+         $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Tenant_Top_Menu_All'");
+         //$defval= mysql_fetch_object($rs);
+         $row = mysql_fetch_row($rs);
+
+        //$fillhead='<thead><tr><th width="1%">'.'#</th><th>Nama</th><th>GrandTotal</th></tr></thead><tbody>';
+        $fillbody='';
+        $nourut= 0;
+        $json_string =($row[0]);
+        $parsed_json = json_decode($json_string);
+        foreach ($parsed_json as $key => $value) {
+            $nourut+= 1;
+            $fillbody = $fillbody . '<tr><td>'. $value->tenant .'</td><td class="right-align">'.$value->menu.'</td><td class="right-align">'.$value->harga.'</td><td class="right-align">'.$value->qty .'</td></tr>';
+
+        }
+        //$fillbody = $fillbody . '<tbody>';
+
+        return  ($fillbody);
     }
 
     //Tansaksi
