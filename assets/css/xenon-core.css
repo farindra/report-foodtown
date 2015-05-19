@@ -5442,14 +5442,15 @@ blockquote small {
 }
 .dataTables_wrapper .DTTT_container .DTTT_button span {
   position: relative;
-  z-index: 100;
+  z-index: 99;
   cursor: pointer;
 }
 .dataTables_wrapper .DTTT_container .DTTT_button:hover {
   background: #f5f5f5;
 }
 .dataTables_wrapper .DTTT_container .DTTT_button:hover div {
-  background: #f5f5f5;
+  /*background: #f5f5f5;*/
+    background: transparent;
 }
 .dataTables_wrapper .DTTT_container .DTTT_button + .DTTT_button {
   border-left: 1px solid #eeeeee;

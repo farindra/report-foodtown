@@ -1,7 +1,10 @@
-<div id="bar-gauge-3" style="height: 440px; width: 100%;"></div>
+<div id="bar-gauge-3" style="height: 440px; width: 100%;">
+
+</div>
+<br></br>
 <?php
 for ($x=1;$x <=25;$x++){
-
+/**
 echo '<div class="row">';
 echo    '<div class="col-sm-12">';
 echo        '<div class="chart-item-bg-2">';
@@ -14,6 +17,6 @@ echo                '<div id="tenant'.$x.'" style="width: 200px;"></div>';
 echo            '</div>';
 echo        '</div>';
 echo    '</div>';
-echo '</div>';
+echo '</div>';**/
 }
 ?>

@@ -17,12 +17,21 @@
         <script type="text/javascript">
             jQuery(document).ready(function($)
             {
-                $("#tabel-tenant-menu").dataTable().yadcf([
-                    {column_number : 0},
-                    {column_number : 1, filter_type: 'text'},
-                    {column_number : 2, filter_type: 'text'},
-                    {column_number : 3, filter_type: 'text'},
-                ]);
+               // $("#tabel-tenant-menu").dataTable().yadcf([
+               //     {column_number : 0},
+               //     {column_number : 1, filter_type: 'text'},
+               //     {column_number : 2, filter_type: 'text'},
+               //     {column_number : 3, filter_type: 'text'},
+               // ]);
+
+                $("#tabel-tenant-menu").dataTable({
+                    dom: "<'row'<'col-sm-5'l><'col-sm-7'Tf>r>"+
+                            "t"+
+                            "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+                    tableTools: {
+                        sSwfPath: "assets/js/datatables/tabletools/copy_csv_xls_pdf.swf"
+                    }
+                });
             });
         </script>
 

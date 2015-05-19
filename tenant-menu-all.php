@@ -2,14 +2,15 @@
 require_once ('config/main.php');
 $db=new database();
 $db->db_connect();
+$defval=$db->tenant_menu_top_all();
 //$member_count=$db->member_count();
-$daily_sales=$db->daily_sales();
-$daily_trans=$db->daily_trans();
-$daily_member=$db->daily_member();
-$daily_trans_hour=$db->daily_trans_hour();
-$daily_trans_hour_7=$db->daily_trans_hour_7();
-$Trans_Years_All=$db->trans_years_all();
-$someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
+//$daily_sales=$db->daily_sales();
+//$daily_trans=$db->daily_trans();
+//$daily_member=$db->daily_member();
+//$daily_trans_hour=$db->daily_trans_hour();
+//$daily_trans_hour_7=$db->daily_trans_hour_7();
+//$Trans_Years_All=$db->trans_years_all();
+//$someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Februari", 2012: 705, 2013: 417, 2014: 283 },{ month: "Maret", 2012: 856, 2013: 513, 2014: 361 },{month: "April", 2012: 1294, 2013: 614, 2014: 471 }]';
 
 
 ?>
@@ -41,8 +42,8 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 
 <!-- User Info, Notifications and Menu Bar -->
 
-<?php include ('page/nav-top.tpl'); include ('page/tabel_tenant_menu.tpl');
-$defval=$db->tenant_menu_top_all();
+<?php include ('page/nav-top.tpl');
+
 $defval1='data_source';
 ?>
 
@@ -191,14 +192,8 @@ jQuery(document).ready(function($)
     // Resize charts
     $(window).on('xenon.resize', function()
     {
-        $("#pageviews-visitors-chart").data("dxChart").render();
-        $("#server-uptime-chart").data("dxChart").render();
-        $("#server-uptime-chart2").data("dxChart").render();
-        $("#realtime-network-stats").data("dxChart").render();
+        //$("#pageviews-visitors-chart").data("dxChart").render();
 
-        $('.first-month').data("dxSparkline").render();
-        $('.second-month').data("dxSparkline").render();
-        $('.third-month').data("dxSparkline").render();
     });
 
 });
@@ -253,7 +248,7 @@ function between(randNumMin, randNumMax)
 
 
 
-<?php include('page/tenant_menu_top_all.tpl');?>
+<?php include ('page/tabel_tenant_menu.tpl');include('page/tenant_menu_top_all.tpl');?>
 
 <!-- Main Footer -->
 <!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->

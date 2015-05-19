@@ -305,7 +305,7 @@ class database{
         $parsed_json = json_decode($json_string);
         foreach ($parsed_json as $key => $value) {
             $nourut+= 1;
-            $fillbody = $fillbody . '<tr><td>'. $value->tenant .'</td><td class="right-align">'.$value->menu.'</td><td class="right-align">'.$value->harga.'</td><td class="right-align">'.$value->qty .'</td></tr>';
+            $fillbody = $fillbody . '<tr><td><strong>'. $value->tenant .'</strong></td><td class="right-align">'.$value->menu.'</td><td class="right-align">'.$value->harga.'</td><td class="right-align">'.$value->qty .'</td></tr>';
 
         }
         //$fillbody = $fillbody . '<tbody>';

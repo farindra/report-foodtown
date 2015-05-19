@@ -303,10 +303,11 @@ $someJSON='[{ month: "Januari", 2012: 546, 2013: 332, 2014: 227 },{ month: "Febr
 
                         },
                         series: [
-                            {valueField: "total4",name: "#1 week",type: "bar",color: '#ff6868'},
-                            {valueField: "total3",name: "#2 week",type: "bar",color: '#ffdd68'},
-                            {valueField: "total2",name: "#3 week",type: "bar",color: '#68ff6f'},
-                            {valueField: "total1",name: "#4 week",type: "bar",color: '#7c38bc'},
+                            //{valueField: "total1",name: "#1 week",type: "bar",color: '#ff6868'},
+                            {valueField: "total2",name: "#1 week",type: "bar",color: '#ffdd68'},
+                            {valueField: "total3",name: "#2 week",type: "bar",color: '#68ff6f'},
+                            {valueField: "total4",name: "#3 week",type: "bar",color: '#7c38bc'},
+                            {valueField: "total5",name: "#4 week",type: "bar",color: '#ff6868'},
 
                         ],
 
