@@ -98,7 +98,7 @@
                         <ul>
                             <li>
                                 <a href="tenant-menu-all.php">
-                                    <span class="title">Top Menu All</span>
+                                    <span class="title">Top Menu</span>
                                 </a>
                             </li>
                         </ul>
@@ -124,7 +124,7 @@
                 </ul>-->
             </li>
             <li>
-                <a href="#">
+                <a href="berita-acara.php">
                     <i class="linecons-mail"></i>
                     <span class="title">Berita Acara</span>
                     <span class="label label-success pull-right"></span>

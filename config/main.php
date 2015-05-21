@@ -313,6 +313,27 @@ class database{
         return  ($fillbody);
     }
 
+    function tenant_menu_top_month_table() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Tenant_Top_Menu_3month'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+
+        //$fillhead='<thead><tr><th width="1%">'.'#</th><th>Nama</th><th>GrandTotal</th></tr></thead><tbody>';
+        $fillbody='';
+        $nourut= 0;
+        $json_string =($row[0]);
+        $parsed_json = json_decode($json_string);
+        foreach ($parsed_json as $key => $value) {
+            $nourut+= 1;
+            $fillbody = $fillbody . '<tr><td><strong>'. $value->tenant .'</strong></td><td class="right-align">'.$value->menu.'</td><td class="right-align">'.$value->harga.'</td><td class="right-align">'.$value->qty .'</td></tr>';
+
+        }
+        //$fillbody = $fillbody . '<tbody>';
+
+        return  ($fillbody);
+    }
+
+
     //Tansaksi
     function trans_years_all() {
         $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='Trans_Years_All'");
