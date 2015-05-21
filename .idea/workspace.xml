@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37be418d-906c-443e-89cb-1f31e77dbf48" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/berita-acara.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/berita-acara.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/main.php" afterPath="$PROJECT_DIR$/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/nav-main.tpl" afterPath="$PROJECT_DIR$/page/nav-main.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/tabel_tenant_menu.tpl" afterPath="$PROJECT_DIR$/page/tabel_tenant_menu.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tenant-menu-all.php" afterPath="$PROJECT_DIR$/tenant-menu-all.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="37be418d-906c-443e-89cb-1f31e77dbf48" name="Default" comment="" />
     <ignored path="report-foodtown.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,7 +44,7 @@
       <file leaf-file-name="berita-acara.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/berita-acara.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="10" selection-start="787" selection-end="787" vertical-scroll-proportion="0.7129456" vertical-offset="147" max-vertical-offset="680">
+            <state line="31" column="10" selection-start="787" selection-end="787" vertical-scroll-proportion="0.9043152" vertical-offset="45" max-vertical-offset="680">
               <folding />
             </state>
           </provider>
@@ -748,7 +740,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/berita-acara.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="10" selection-start="787" selection-end="787" vertical-scroll-proportion="0.7129456" vertical-offset="147" max-vertical-offset="680">
+        <state line="31" column="10" selection-start="787" selection-end="787" vertical-scroll-proportion="0.9043152" vertical-offset="45" max-vertical-offset="680">
           <folding />
         </state>
       </provider>
