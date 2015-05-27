@@ -333,6 +333,30 @@ class database{
         return  ($fillbody);
     }
 
+    //berita acara
+    function berita_acara() {
+        $rs = $this->db_query2("SELECT Val_Json FROM Tab_Val where Val_Nm='berita_acara'");
+        //$defval= mysql_fetch_object($rs);
+        $row = mysql_fetch_row($rs);
+
+        //$fillhead='<thead><tr><th width="1%">'.'#</th><th>Nama</th><th>GrandTotal</th></tr></thead><tbody>';
+        $fillbody='';
+        $nourut= 0;
+        $json_string =($row[0]);
+        $parsed_json = json_decode($json_string);
+        foreach ($parsed_json as $key => $value) {
+            $nourut+= 1;
+            //$fillbody = $fillbody . '<tr><td><strong>'. $value->tenant .'</strong></td><td class="right-align">'.$value->menu.'</td><td class="right-align">'.$value->harga.'</td><td class="right-align">'.$value->qty .'</td></tr>';
+
+            $fillbody =$fillbody. '<li><time class="cbp_tmtime"><span>'.$value->date.'</span><span>'.$value->time.'</span></time>';
+            //$fillbody =$fillbody. '<div class="cbp_tmicon timeline-bg-success"><i class="fa-paper-plane-o"></i></div>';
+            $fillbody =$fillbody. '<div class="cbp_tmicons"><img src="assets/images/user/'.$value->nama.'.jpg" alt="Image not found" onError="this.onerror=null;this.src=&#39assets/images/user-4.png&#39;" class="img-cirlce img-responsive img-thumbnail"></div>';
+            $fillbody =$fillbody. '<div class="cbp_tmlabel"><h2><a href="#">'.$value->judul.'</a> </h2><blockquote><p>'.$value->isi.'</p></blockquote><p><span><i class="fa-user"></i>  Create By '.$value->nama.' </span>&nbsp;&nbsp;&nbsp;&nbsp; <!--<i class="fa-envelope"></i> Send To : <span class="tag label label-info">  </span>--></p></div></li>';
+        }
+        //$fillbody = $fillbody . '<tbody>';
+
+        return  ($fillbody);
+    }
 
     //Tansaksi
     function trans_years_all() {

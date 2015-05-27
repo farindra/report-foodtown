@@ -1,5 +1,6 @@
 <ul class="cbp_tmtimeline">
-    <li>
+   <?php echo $db->berita_acara() ;?>
+   <!-- <li>
         <time class="cbp_tmtime" datetime="2014-10-03T18:30"><span class="hidden">03/10/2014</span> <span class="large">Now</span></time>
 
         <div class="cbp_tmicon timeline-bg-gray">
@@ -92,5 +93,5 @@
                 </div>
             </div>
         </div>
-    </li>
+    </li>-->
 </ul>
